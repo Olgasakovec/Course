@@ -1,4 +1,4 @@
-public class Task extends Userk {
+public class Task extends User {
 
     @Override
     public void stop() {

@@ -1,4 +1,4 @@
-public class Userk {
+public class User {
 
     public void goTo() {
 
