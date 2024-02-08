@@ -5,6 +5,7 @@ public class Task extends User {
     public void stop() {
         super.stop();
     }
+
     @Override
     public void goTo() {
         super.goTo();
