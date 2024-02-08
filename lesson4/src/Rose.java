@@ -1,6 +1,5 @@
-public class Rose {
-
-    public void printFlowerInfo() {
-        System.out.println("Роза " + getCountryOfOrigin() + " " + getStorageDays() + " дней");
-    }
+    public class Rose extends Flower {
+        public Rose(String countryOfOrigin, int storageDays, double price) {
+            super(countryOfOrigin, storageDays, price);
+        }
 }

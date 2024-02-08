@@ -5,15 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0635220f-1f96-44c6-bce3-0ab780ece797" name="Changes" comment="fixed branch">
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lesson4/src/Flower.java" beforeDir="false" afterPath="$PROJECT_DIR$/lesson4/src/Flower.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lesson4/src/Gvozdika.java" beforeDir="false" afterPath="$PROJECT_DIR$/lesson4/src/Gvozdika.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lesson4/src/Rose.java" beforeDir="false" afterPath="$PROJECT_DIR$/lesson4/src/Rose.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lesson4/src/Variant1.java" beforeDir="false" afterPath="$PROJECT_DIR$/lesson4/src/Variant1.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="lesson3" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="HARD" />
   </component>
@@ -28,27 +43,44 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "lesson4",
-    "jdk.selected.JAVA_MODULE": "zulu-1.8",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Lenovo/IdeaProjects/course/lesson4/src",
-    "onboarding.tips.debug.path": "C:/Users/Lenovo/IdeaProjects/course/lesson4/src/Main.java"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Variant1.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Variant3.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;lesson4&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;zulu-1.8&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Lenovo/IdeaProjects/course/lesson4/src&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/Lenovo/IdeaProjects/course/lesson4/src/Main.java&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Lenovo\IdeaProjects\course\lesson4\src" />
+      <recent name="C:\Users\Lenovo\IdeaProjects\course\lesson2\src" />
+      <recent name="C:\Users\Lenovo\IdeaProjects\course\lesson2" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Variant1">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="lesson4" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Variant1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Variant1" />
+      <module name="lesson4" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Variant3" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Variant3" />
+      <module name="lesson2" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -68,6 +100,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Variant1" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Variant3" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -112,7 +147,31 @@
       <option name="project" value="LOCAL" />
       <updated>1707373130021</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="fixed branch">
+      <option name="closed" value="true" />
+      <created>1707396323337</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1707396323337</updated>
+    </task>
+    <task id="LOCAL-00005" summary="fixed branch">
+      <option name="closed" value="true" />
+      <created>1707396425355</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1707396425355</updated>
+    </task>
+    <task id="LOCAL-00006" summary="fixed branch">
+      <option name="closed" value="true" />
+      <created>1707400541506</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1707400541506</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

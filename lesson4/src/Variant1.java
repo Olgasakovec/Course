@@ -1,7 +1,7 @@
 public class Variant1 {
     public static void main(String[] args) {
-        //task1();
-        task2();
+        task1();
+        //task2();
     }
 
     public static void task1() {
@@ -17,14 +17,6 @@ public class Variant1 {
         task.stop();
     }
     public static void task2() {
-        /*
-        Как получить доступ к переопределенным методам родительского класса?
-        Ответ не должен содержать запись new User().
-        Менять любые классы запрещено, можно работать только внутри метода task1
-        Ответ запишите ниже
-        ....
-         */
-
         Flower.Rose rose = new Flower.Rose("Italy", 10, 60.2);
         rose.printFlowerInfo();
         Flower.Gvozdika gvozdika = new Flower.Gvozdika("Paris", 5, 11.5);

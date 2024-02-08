@@ -44,7 +44,7 @@ public class Flower {
     public void printFlowerInfo() {
     }
 
-    public class Rose extends Flower {
+    public static class Rose extends Flower {
         public Rose(String countryOfOrigin, int storageDays, double price) {
             super(countryOfOrigin, storageDays, price);
         }
