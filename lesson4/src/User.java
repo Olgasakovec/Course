@@ -1,4 +1,4 @@
-public class User {
+public class Userk {
 
     public void goTo() {
 
@@ -9,5 +9,4 @@ public class User {
 
         System.out.println("stop method is called");
     }
-
 }
