@@ -1,6 +1,5 @@
 public class Buket {
     private Flower[] flowers;
-
     public Buket(Flower[] flowers) {
         this.flowers = flowers;
     }

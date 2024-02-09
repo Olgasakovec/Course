@@ -4,8 +4,7 @@ public class Flower {
     private int storageDays;
     private double price;
 
-    static int sellCount = 0;
-
+    static int sellCount;
     public void sell(){
         sellCount++;
     }
