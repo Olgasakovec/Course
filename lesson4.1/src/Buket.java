@@ -17,5 +17,4 @@ public class Buket {
         int count = flowers.length;
         Flower.sellCount += count;
    }
-
 }

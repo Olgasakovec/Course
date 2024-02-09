@@ -27,6 +27,5 @@ public class Flower {
     public double getPrice() {
         return price;
     }
-
 }
 
