@@ -1,12 +1,11 @@
 public class Buket {
     private Flower[] flowers;
-
     public Buket(Flower[] flowers) {
         this.flowers = flowers;
     }
 
     public double getSellFlowers() {
-        double totalPrice = 0;
+        double totalPrice;
         for (Flower flower : flowers) {
             totalPrice = totalPrice + flower.getPrice();
         }
@@ -15,6 +14,7 @@ public class Buket {
 
     public void sell() {
         int count = flowers.length;
-        Flower.sellCount += count;
+        Flower.sellCounts += count;
    }
+
 }
