@@ -5,6 +5,7 @@ public class Flower {
     private double price;
 
     static int sellCount = 0;
+
     public void sell(){
         sellCount++;
     }

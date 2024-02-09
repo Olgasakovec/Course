@@ -19,7 +19,6 @@ public class Main2 {
         Flower[] flowers2 = new Flower[]{rose, rose, rose, rose};
         Flower[] flowers3 = new Flower[]{tulpan, tulpan, tulpan};
 
-
         Buket buket1 = new Buket(flowers1);
         Buket buket2 = new Buket(flowers2);
         Buket buket3 = new Buket(flowers3);
@@ -31,10 +30,7 @@ public class Main2 {
         System.out.println("Букет 1: " + buket1.getSellFlowers());
         System.out.println("Букет 2: " + buket2.getSellFlowers());
         System.out.println("Букет 3: " + buket3.getSellFlowers());
-
         System.out.println("Total sell flowers: " + Flower.sellCount);
-
-
     }
 }
 
