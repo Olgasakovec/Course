@@ -4,6 +4,7 @@ public class Task extends User {
         super.stop();
         System.out.println("stop method is override");
     }
+
     @Override
     public void goTo() {
         super.goTo();
