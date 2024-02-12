@@ -6,13 +6,13 @@ public class Buket {
     public double getSellFlowers() {
         double totalPrice;
         for (Flower flower : flowers) {
-            totalPrice = totalPrice + flower.getPrice();
+            totalPrice += flower.getPrice();
         }
         return totalPrice;
     }
     public void sell() {
         int count = flowers.length;
-        Flower.sellCounts += count;
+        Flower.sellCount += count;
    }
 
 }
