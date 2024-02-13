@@ -14,18 +14,14 @@ public class Flower {
         this.storageDays = storageDays;
         this.price = price;
     }
-
     public String getCountryOfOrigin() {
         return countryOfOrigin;
     }
-
     public int getStorageDays() {
         return storageDays;
     }
-
     public double getPrice() {
         return price;
     }
-
 }
 
