@@ -1,5 +1,4 @@
-import java.util.Scanner;
-
+import clothes.*;
 /*
       Создать перечисление (enum), содержащее размеры одежды (XXS, XS, S, M, L). Перечисление содержит метод getDescription,
       возвращающий строку "Взрослый размер". Переопределить метод getDescription - для константы XXS метод должен возвращать строку
@@ -18,9 +17,17 @@ public class Main_clothes {
         int value = coatSize.getEuroSize();
         System.out.println(value);
 
+        Skirt klesh = new Skirt(32, 50, "blue");
+        Tshirt nike = new Tshirt(38, 40, "white");
+        Trouthers puma = new Trouthers(36, 98, "red");
+        Tie lop = new Tie(40, 10, "black");
+
+        Clothe[] clothes = new Clothe[]{klesh, nike, puma, lop};
+
+        Atelier atelier = new Atelier();
+        atelier.menwear(clothes);
+        atelier.womanwear(clothes);
     }
-
-
 }
 
 

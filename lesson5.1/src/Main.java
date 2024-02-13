@@ -6,9 +6,9 @@ import java.util.Scanner;
          */
 public class Main {
     public static void main(String[] args) {
-
         task1();
     }
+
     public static void task1() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter season number (1-4): ");
