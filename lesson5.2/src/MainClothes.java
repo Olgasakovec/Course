@@ -13,7 +13,7 @@ public class MainClothes {
     public static void main(String[] args) {
         SizeEnum coatSize = SizeEnum.XXS;
 
-        coatSize.getDescription();
+        System.out.println(coatSize.getDescription());
         int value = coatSize.getEuroSize();
         System.out.println(value);
 

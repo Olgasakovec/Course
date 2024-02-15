@@ -1,9 +1,15 @@
 public enum SizeEnum {
-    XXS(32),
+    XXS(32) {
+        @Override
+        public String getDescription() {
+            return "Детский размер";
+        }
+    },
     XS(34),
     S(36),
     M(38),
     L(40);
+
 
     private int euroSize;
 
@@ -15,14 +21,9 @@ public enum SizeEnum {
         return this.euroSize;
     }
 
-    public void getDescription() {
-
-        switch (this) {
-            case XXS: {
-                System.out.println("Детский размер");
-                break;
-            }
-            default: System.out.println("Взрослый размер");
-        }
+    public String getDescription() {
+        return "Взрослый размер";
     }
 }
+
+
