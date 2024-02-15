@@ -1,6 +1,6 @@
 package clothes;
 
-public class Tshirt extends Clothe implements Menwear, Womenwear {
+public class Tshirt extends Clothe implements MenWear, WomenWear {
 
     public Tshirt(int sizewear, int costwear, String colorwear) {
         super(sizewear, costwear, colorwear);

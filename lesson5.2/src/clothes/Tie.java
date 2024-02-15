@@ -1,6 +1,6 @@
 package clothes;
 
-public class Tie extends Clothe implements Menwear {
+public class Tie extends Clothe implements MenWear {
 
     public Tie(int sizewear, int costwear, String colorwear) {
         super(sizewear, costwear, colorwear);

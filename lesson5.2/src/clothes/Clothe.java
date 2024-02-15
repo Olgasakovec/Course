@@ -1,10 +1,8 @@
 package clothes;
-
 public abstract class Clothe {
     private int sizeWear;
     private double costWear;
     private String colorWear;
-
     public Clothe(int sizeWear, int costWear, String colorWear){
         this.sizeWear = sizeWear;
         this.costWear = costWear;

@@ -1,21 +1,21 @@
 import clothes.Clothe;
-import clothes.Menwear;
-import clothes.Womenwear;
+import clothes.MenWear;
+import clothes.WomenWear;
 
 public class Atelier {
 
     public void menwear(Clothe[] clothes){
         for (Clothe clothe : clothes){
-            if (clothe instanceof Menwear){
-                ((Menwear) clothe).towearmen();
+            if (clothe instanceof MenWear){
+                ((MenWear) clothe).towearmen();
             }
         }
     }
 
     public void womanwear(Clothe[] clothes){
         for (Clothe clothe: clothes){
-            if (clothe instanceof Womenwear){
-                ((Womenwear) clothe).towearwomen();
+            if (clothe instanceof WomenWear){
+                ((WomenWear) clothe).towearwomen();
             }
         }
     }

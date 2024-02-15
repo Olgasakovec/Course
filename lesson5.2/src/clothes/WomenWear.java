@@ -1,5 +1,5 @@
 package clothes;
 
-public interface Womenwear {
+public interface WomenWear {
     void towearwomen();
 }
