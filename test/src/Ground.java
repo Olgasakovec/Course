@@ -1,6 +1,6 @@
 public class Ground extends Transport{
     private int wheelCount;
-    private double fuelСonsumption;
+    public double fuelСonsumption;
 
        Ground(double power, double maxspeed, double weight, String brand, int wheelCount, double fuelСonsumption){
         super(power, maxspeed, weight, brand);
