@@ -1,9 +1,9 @@
-public class User {
+public class User <T extends TicketTransport> {
     private String login;
     private String password;
 
 
-    <T> User(T ticketTo, T ticketFrom) throws Exception {
+    User(T ticketTo, T ticketFrom) throws Exception {
         if (ticketTo == null || ticketFrom == null) {
             throw new Exception("Билет не может быть null");
         }

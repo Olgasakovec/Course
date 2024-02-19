@@ -40,7 +40,7 @@ public class Task {
         TicketBus ticket1 = new TicketBus();
         TicketTrain ticket2 = new TicketTrain();
         try {
-            User user = new <TicketTransport>User(ticket1, ticket2);
+            User user = new User(ticket1, ticket2);
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
