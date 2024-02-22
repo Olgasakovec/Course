@@ -22,7 +22,6 @@ public class Military extends Air {
         } else {
             System.out.println("У вас нет такой системы");
         }
-
     }
 
     public String getDescription() {

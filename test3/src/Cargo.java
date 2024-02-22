@@ -19,5 +19,4 @@ public class Cargo extends Ground {
                 System.out.println("Вам нужен грузовик побольше");
             }
         }
-
     }

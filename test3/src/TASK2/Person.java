@@ -17,7 +17,6 @@ public class Person {
         this.trouthers.takeon();
         this.jacket.takeon();
         this.shooes.takeon();
-
     }
     void takeoff() {
         this.trouthers.takeoff();

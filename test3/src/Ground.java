@@ -6,7 +6,6 @@ public class Ground extends Transport{
         super(power, maxspeed, weight, brand);
         this.fuelСonsumption = fuelСonsumption;
         this.wheelCount = wheelCount;
-
     }
 
     public String getDescription() {
@@ -26,5 +25,4 @@ public class Ground extends Transport{
         double fuelConsumed = calculateFuelConsumption(distance);
         System.out.println("За время" + time + "ч" + "автомобиль" + getBrand() + "двигаясь с максимальной скоростью" + maxSpeed + "км/ч проедет" + distance + "км" + "и израсходует" + fuelConsumed + "литров топлива");
     }
-
 }

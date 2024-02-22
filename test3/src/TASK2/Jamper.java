@@ -4,7 +4,6 @@ public class Jamper  implements Jacket{
     @Override
     public void takeon() {
         System.out.println("Takeon Jamper");
-
     }
 
     @Override

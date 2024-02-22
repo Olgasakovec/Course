@@ -1,14 +1,11 @@
 public class Transport {
     public Transport() {
-
     }
-
 
     private double power;
     public double maxSpeed;
     private double weight;
     private String brand;
-
 
     public Transport(double power, double maxSpeed, double weight, String brand) {
         this.power = power;
@@ -36,6 +33,5 @@ public class Transport {
     public double convertPowerToKilowatts() {
         return getPower() * 0.74;
     }
-
 }
 

@@ -4,7 +4,6 @@ public class Heels implements Shooes{
     @Override
     public void takeon() {
         System.out.println("Takeon Heels");
-
     }
 
     @Override

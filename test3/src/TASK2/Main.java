@@ -1,5 +1,4 @@
 package TASK2;
-
 public class Main {
     public static void main(String[] args) {
         Trouthers myPants =  new Pants();
