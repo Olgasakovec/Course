@@ -8,25 +8,23 @@ public class Military extends Air {
         this.missileCount = missileCount;
     }
 
-    private void shoot(){
-        Military military = new military();
-        if (military.missileCount !=0){
+    private void shoot() {
+        if (this.missileCount != 0) {
             System.out.println("Ракета пошла");
-        }
-        else {
+        } else {
             System.out.println("Боеприпасы отсутствуют");
         }
+    }
 
-        private void eject(){
-                if (military.hasEjectionSystem){
-                System.out.println("Катапультирование прошло успешно");
-            }
-            else {
-                System.out.println("У вас нет такой системы");
-            }
-
+    public void eject() {
+        if (this.hasEjectionSystem) {
+            System.out.println("Катапультирование прошло успешно");
+        } else {
+            System.out.println("У вас нет такой системы");
+        }
 
     }
+
     public String getDescription() {
         return super.getDescription() + String.format("hasEjectionSystem is %s missileCount is %s ", hasEjectionSystem, missileCount);
     }

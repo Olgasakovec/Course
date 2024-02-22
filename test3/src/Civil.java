@@ -11,19 +11,16 @@ public class Civil extends Air {
         this.hasBusinessClass = hasBusinessClass;
         this.maxPassengerCount = maxPassengerCount;
         this.passengerCountLoad = passengerCountLoad;
+    }
 
-
-        Civil civil = new Civil();
-        civil.maxPassengerCount = 50;
-        civil.passengerCountLoad = 48;
-
-        if (civil.passengerCountLoad <= maxPassengerCount) {
+    public void info() {
+        if (this.passengerCountLoad <= maxPassengerCount) {
             System.out.println("Автобус загружен");
         } else {
             System.out.println("Вам нужен автобус побольше");
         }
-
     }
+
     public String getDescription() {
         return super.getDescription() + String.format("passengerCount is %s, hasBusinessClass is %s", passengerCount, hasBusinessClass);
     }
