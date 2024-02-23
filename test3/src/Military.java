@@ -2,8 +2,8 @@ public class Military extends Air {
     private boolean hasEjectionSystem;
     private int missileCount;
 
-    public Military(double power, double maxspeed, double weight, String brand, double wingspan, double runwayLength, boolean hasEjectionSystem, int missileCount) {
-        super(power, maxspeed, weight, brand, wingspan, runwayLength);
+    public Military(double power, double maxSpeed, double weight, String brand, double wingspan, double runwayLength, boolean hasEjectionSystem, int missileCount) {
+        super(power, maxSpeed, weight, brand, wingspan, runwayLength);
         this.hasEjectionSystem = hasEjectionSystem;
         this.missileCount = missileCount;
     }

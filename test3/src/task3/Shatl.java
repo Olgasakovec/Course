@@ -15,7 +15,6 @@ public class Shatl implements IStart {
         } else {
             System.out.println("Проверка Shatl прошла не успешно");
             return false;
-
         }
     }
 

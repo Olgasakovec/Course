@@ -2,8 +2,8 @@ public class Ground extends Transport{
     private int wheelCount;
     public double fuelСonsumption;
 
-    Ground(double power, double maxspeed, double weight, String brand, int wheelCount, double fuelСonsumption){
-        super(power, maxspeed, weight, brand);
+    Ground(double power, double maxSpeed, double weight, String brand, int wheelCount, double fuelСonsumption){
+        super(power, maxSpeed, weight, brand);
         this.fuelСonsumption = fuelСonsumption;
         this.wheelCount = wheelCount;
     }
@@ -20,7 +20,7 @@ public class Ground extends Transport{
         return maxSpeed * (time / 60.0);
     }
 
-    public void calculatedDistanceFuelfuelСonsumption(double time) {
+    public void calculatedDistanceFuelСonsumption(double time) {
         double distance = calculatedDistance(time);
         double fuelConsumed = calculateFuelConsumption(distance);
         System.out.println("За время" + time + "ч" + "автомобиль" + getBrand() + "двигаясь с максимальной скоростью" + maxSpeed + "км/ч проедет" + distance + "км" + "и израсходует" + fuelConsumed + "литров топлива");

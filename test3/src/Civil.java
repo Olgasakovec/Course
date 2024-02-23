@@ -4,7 +4,6 @@ public class Civil extends Air {
     private double maxPassengerCount;
     private double passengerCountLoad;
 
-
     public Civil(double power, double maxSpeed, double weight, String brand, double wingspan, double runwayLength, int passengerCount, boolean hasBusinessClass, double maxPassengerCount, double passengerCountLoad){
         super(power, maxSpeed, weight, brand, wingspan, runwayLength);
         this.passengerCount = passengerCount;
@@ -12,6 +11,7 @@ public class Civil extends Air {
         this.maxPassengerCount = maxPassengerCount;
         this.passengerCountLoad = passengerCountLoad;
     }
+
     public void info() {
         if (this.passengerCountLoad <= maxPassengerCount) {
             System.out.println("Автобус загружен");

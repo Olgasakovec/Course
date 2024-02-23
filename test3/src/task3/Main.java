@@ -9,6 +9,4 @@ public class Main {
         cosmodrom.star(shatl);
         cosmodrom.star(spaceX);
     }
-
-
 }

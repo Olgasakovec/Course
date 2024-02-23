@@ -1,7 +1,5 @@
 package task3;
-
 public class Cosmodrom {
-
 
     void star(IStart objectStart) {
 
@@ -16,10 +14,6 @@ public class Cosmodrom {
         } else {
             System.out.println("Предстартовая проверка провалена");
         }
-
-
     }
-
-
 }
 

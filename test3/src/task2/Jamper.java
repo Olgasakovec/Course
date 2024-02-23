@@ -1,5 +1,4 @@
 package task2;
-
 public class Jamper  implements Jacket{
     @Override
     public void takeon() {

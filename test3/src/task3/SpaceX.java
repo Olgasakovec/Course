@@ -14,7 +14,6 @@ public class SpaceX implements IStart {
         } else {
             System.out.println("Проверка SpaceX прошла не успешно");
             return false;
-
         }
     }
 
