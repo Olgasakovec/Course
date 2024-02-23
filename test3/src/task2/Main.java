@@ -1,4 +1,4 @@
-package TASK2;
+package task2;
 public class Main {
     public static void main(String[] args) {
         Trouthers myPants =  new Pants();

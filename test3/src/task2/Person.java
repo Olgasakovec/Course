@@ -1,4 +1,4 @@
-package TASK2;
+package task2;
 
 public class Person {
     private String name;
@@ -22,7 +22,5 @@ public class Person {
         this.trouthers.takeoff();
         this.jacket.takeoff();
         this.shooes.takeoff();
-
     }
-
 }

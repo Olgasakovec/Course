@@ -13,7 +13,7 @@ public class Main {
         Cargo maz = new Cargo(987,588,666,"Maz",4,44,555,555);
         maz.load();
         Ground bmw = new Ground(100,555,556,"bmw",4,66);
-        bmw.calculatedDistanceFuelfuelСonsumption();
+        bmw.calculatedDistanceFuelfuelСonsumption(1);
         Military zzz = new Military(3222,3333,33889,"zzz",66,666,true,666);
         zzz.eject();
         PassengerCar qqq = new PassengerCar(555,555,8888,"qqq",656,556,"sedan",55);

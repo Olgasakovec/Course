@@ -1,6 +1,6 @@
-package TASK2;
+package task2;
 
-public interface Shooes {
+public interface Jacket {
     void takeon();
 
     void takeoff();

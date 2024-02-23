@@ -1,4 +1,4 @@
-package TASK2;
+package task2;
 
 public interface Trouthers {
     void takeon();
