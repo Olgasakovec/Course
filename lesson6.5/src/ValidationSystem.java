@@ -1,5 +1,4 @@
-public class ValidatorException {
-
+public class ValidationSystem {
     public static boolean validate(String login, String password, String confirmPassword)  {
         try {
             if (login == null || password == null || confirmPassword == null) {
@@ -19,7 +18,6 @@ public class ValidatorException {
             }
             return true;
         }
-
 
         catch (WrongPasswordException e) {
             System.out.println("Ошибка валидации пароля: " + e.getMessage());
