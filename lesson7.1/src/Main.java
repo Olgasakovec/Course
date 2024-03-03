@@ -21,8 +21,9 @@ public class Main {
             System.out.println(box);
         }
 
-        box1.setWeight(10);
-        box2.setWeight(box1.getWeight());
+        if (!heavyBoxes.isEmpty()) {
+            heavyBoxes.get(0).setWeight(10);
+        }
 
         int deleteIndex = heavyBoxes.size() - 2;
         heavyBoxes.remove(deleteIndex);
