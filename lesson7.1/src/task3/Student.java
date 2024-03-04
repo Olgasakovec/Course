@@ -38,6 +38,10 @@ public class Student {
         }
         return sum / score.size();
     }
+
+    public void nextCourse() {
+        this.course++;
+    }
 }
 
 

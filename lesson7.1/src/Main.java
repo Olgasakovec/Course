@@ -25,6 +25,10 @@ public class Main {
             heavyBoxes.get(0).setWeight(10);
         }
 
+        if (heavyBoxes.size()> 1) {
+            heavyBoxes.get(1).setWeight(heavyBoxes.get(0).getWeight());
+        }
+
         int deleteIndex = heavyBoxes.size() - 2;
         heavyBoxes.remove(deleteIndex);
 
