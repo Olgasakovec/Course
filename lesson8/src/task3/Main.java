@@ -5,9 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
-    static {
-        System.getProperty("user.dir");
-    }
+    private static String baseUrl = System.getProperty("user.dir");
 
     public static void main(String[] args) {
         List<User> userList = new ArrayList<>();
@@ -20,10 +18,9 @@ public class Main {
             System.out.println("Пользователь: " + user.getFirstName() + " " + user.getLastName() + ", Возраст: " + user.getAge());
         }
 
-        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("user.dat")))
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(baseUrl + "user.dat")))
         {
-            User u = new User("Ваня", "Иванов", 65);
-            oos.writeObject(u);
+            oos.writeObject(userList);
         }
         catch (Exception ex) {
             System.out.println(ex.getMessage());
