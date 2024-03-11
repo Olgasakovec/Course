@@ -6,11 +6,9 @@
          */
 public class People implements Runnable{
 
-    private volatile boolean running = true;
-
     @Override
     public void run() {
-        while (running) {
+        while (!Thread.currentThread().isInterrupted()) {
             Thread currentThread = Thread.currentThread();
             System.out.println("Имя потока: " + currentThread.getName() + ", ID потока: " + currentThread.getId());
             try {
@@ -20,10 +18,6 @@ public class People implements Runnable{
                 return;
             }
         }
-    }
-
-    public void stop() {
-        running = false;
     }
 
     public static void main(String[] args) {
@@ -37,8 +31,6 @@ public class People implements Runnable{
         catch (InterruptedException e) {
             e.printStackTrace();
         }
-
-        people.stop();
         thread.interrupt();
     }
 }
