@@ -1,4 +1,4 @@
-public class EmployeeThread implements Runnable {
+public class EmployeeThread extends Thread {
     String name;
 
     private static String email = "test@gmail.com";
