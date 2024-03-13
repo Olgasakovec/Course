@@ -1,32 +1,33 @@
 public class EmployeeThread extends Thread {
-    String name;
+    private String name;
 
-    private static String email = "test@gmail.com";
+    private static ThreadLocal<String> email = new ThreadLocal<>();
 
-    EmployeeThread(String name) {
-        this.name = name;
+    public EmployeeThread(String name) {
+        super(name);
     }
 
-    public static void setEmail(String email) {
-        EmployeeThread.email = email;
+    public static void setEmail(String emailValue) {
+        email.set(emailValue);
     }
 
     @Override
     public void run() {
-        email = "test@gmail.com" + Thread.currentThread().getId();
+        email.set(Thread.currentThread().getName());
+
         try {
             Thread.sleep(2000);
         } catch (InterruptedException e) {
-            System.out.println("Поток " + name + " был прерван");
-            return;
+            e.printStackTrace();
         }
-        System.out.println("ID потока: " + Thread.currentThread().getId() + ", Имя потока: " + name + ", Email: " + email.get());
+        System.out.printf("current thread with id %s have name %s with value is %s%n", Thread.currentThread().getId(), Thread.currentThread().getName(), email);
     }
 
     public static void main(String[] args) {
         for (int i = 1; i <= 5; i++) {
             EmployeeThread employeeThread = new EmployeeThread("Thread with index " + i);
-            setEmail("testemail" + i);
+            EmployeeThread.setEmail("testemail" + i);
+            employeeThread.start();
         }
     }
 }
