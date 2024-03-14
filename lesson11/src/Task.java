@@ -12,8 +12,8 @@ public class Task {
          Результат вывести в консоль.
          */
 
-        IFunctional revert = (v1, v2) -> {
-            String joinValue = String.join(" ", v1, v2);
+        IFunctional revert = (x, y) -> {
+            String joinValue = String.join(" ", x, y);
             return new StringBuilder(joinValue).reverse().toString();
         };
 
