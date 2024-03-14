@@ -1,5 +1,4 @@
 public class EmployeeThread extends Thread {
-    private String name;
 
     private static ThreadLocal<String> email = new ThreadLocal<>();
 
@@ -20,7 +19,8 @@ public class EmployeeThread extends Thread {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        System.out.printf("current thread with id %s have name %s with value is %s%n", Thread.currentThread().getId(), Thread.currentThread().getName(), email);
+        email.get();
+        System.out.printf("current thread with id %s have name %s with value is %s%n", Thread.currentThread().getId(), Thread.currentThread().getName(), email.get());
     }
 
     public static void main(String[] args) {

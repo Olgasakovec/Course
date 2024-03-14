@@ -1,9 +1,12 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Client implements Runnable {
 
     @Override
     public void run() {
         Thread currentThread = Thread.currentThread();
-        System.out.println("Имя потока: " + currentThread.getName()) + ", ID потока: " + currentThread.getId();
+        System.out.println(("Имя потока: " + currentThread.getName()) + ", ID потока: " + currentThread.getId());
         try {
             Thread.sleep(500);
         }catch (InterruptedException e) {
@@ -14,11 +17,12 @@ public class Client implements Runnable {
 
     public static void main(String[] args) {
         int numThreads = 5;
-        Thread[] thread = new Thread[numThreads];
-        for (i = 0; i < 5; i++) {
-            thread[i] = new Thread(new Client());
+        List<Thread> thread = new ArrayList<>();
+        for (int i = 0; i < numThreads; i++) {
+            thread.add(new Thread(new Client()));
         }
-        thread[0].start();
-        thread[numThreads -2].start();
+
+        thread.get(0).start();
+        thread.get(numThreads - 2).start();
     }
 }
