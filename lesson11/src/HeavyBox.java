@@ -20,7 +20,7 @@ public class HeavyBox {
                 '}';
     }
     public static void main(String[] args) {
-        PriorityQueue<HeavyBox> boxQueue = new PriorityQueue<HeavyBox>(Comparator.comparingInt(a -> a.weight));
+        Queue<HeavyBox> boxQueue = new PriorityQueue<>();
 
         boxQueue.offer(new HeavyBox(5));
         boxQueue.offer(new HeavyBox(15));
