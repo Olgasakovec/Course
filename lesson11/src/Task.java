@@ -1,7 +1,13 @@
+import java.util.AbstractList;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.BinaryOperator;
+
 public class Task {
 
     public static void main(String[] args) {
         task1();
+        task3();
     }
 
     static void task1() {
@@ -50,6 +56,25 @@ public class Task {
         Запустить BinaryOperator для каждого элемента динамического массива.
         Каждый элемент массива надо сравнивать с одиночным объектом класса HeavyBox, который вы самом начале.
          */
-    }
+        List<HeavyBox> boxes = new ArrayList<>();
+        boxes.add(new HeavyBox(200));
+        boxes.add(new HeavyBox(300));
+        boxes.add(new HeavyBox(400));
+        boxes.add(new HeavyBox(2500));
 
+        HeavyBox singleBox = new HeavyBox(2200);
+
+        BinaryOperator<HeavyBox> compareWeight = (value1, value2) -> {
+            if (value1.getWeight() > value2.getWeight()) {
+                return value1;
+            } else {
+                return value2;
+            }
+        };
+
+        for (HeavyBox box : boxes) {
+            HeavyBox resultBox = compareWeight.apply(box, singleBox);
+            System.out.println("The heaviest box Weight: " + resultBox.getWeight());
+        }
+    }
 }
