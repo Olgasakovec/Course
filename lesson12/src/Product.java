@@ -24,7 +24,7 @@ public class Product {
 
     @Override
     public String toString() {
-        return super.toString();
+        return "Name: " + name + "ProductId" + productId;
     }
 }
 
