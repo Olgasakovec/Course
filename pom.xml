@@ -2,16 +2,33 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.example</groupId>
-    <artifactId>maven1</artifactId>
+    <groupId>sacovec.olga</groupId>
+    <artifactId>course</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
-    <name>maven1</name>
+    <name>course</name>
     <url>http://maven.apache.org</url>
     <modules>
-        <module>submaven1</module>
-        <module>submaven2</module>
+        <module>git_practice</module>
+        <module>lesson1</module>
+        <module>lesson2</module>
+        <module>lesson3</module>
+        <module>lesson4.2</module>
+        <module>lesson5.2</module>
+        <module>lesson6.3</module>
+        <module>lesson6.5</module>
+        <module>lesson7.1</module>
+        <module>lesson8</module>
+        <module>lesson9</module>
+        <module>lesson10</module>
+        <module>lesson11</module>
+        <module>lesson12</module>
+        <module>maven</module>
+        <module>maven1</module>
+        <module>test</module>
+        <module>test3</module>
+        <module>test4</module>
     </modules>
 
     <properties>
@@ -38,4 +55,13 @@
         <version>5.7.0</version>
     </dependency>
     </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0-M5</version>
+            </plugin>
+        </plugins>
+    </build>
 </project>

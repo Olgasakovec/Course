@@ -1,0 +1,192 @@
+Subject: [PATCH] lesson6
+---
+Index: lesson6.3/src/Main.java
+===================================================================
+diff --git a/lesson6.3/src/Main.java b/lesson6.3/src/Main.java
+deleted file mode 100644
+--- a/lesson6.3/src/Main.java	(revision e6782e68c3eb77addd479727d92c737faaaea099)
++++ /dev/null	(revision e6782e68c3eb77addd479727d92c737faaaea099)
+@@ -1,15 +0,0 @@
+-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
+-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+-public class Main {
+-    public static void main(String[] args) {
+-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
+-        // to see how IntelliJ IDEA suggests fixing it.
+-        System.out.printf("Hello and welcome!");
+-
+-        for (int i = 1; i <= 5; i++) {
+-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
+-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
+-            System.out.println("i = " + i);
+-        }
+-    }
+-}
+\ No newline at end of file
+Index: lesson6.3/src/Task.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/lesson6.3/src/Task.java b/lesson6.3/src/Task.java
+new file mode 100644
+--- /dev/null	(revision 88cbff73d574397a4a325e5e580abbbc4fb8169d)
++++ b/lesson6.3/src/Task.java	(revision 88cbff73d574397a4a325e5e580abbbc4fb8169d)
+@@ -0,0 +1,51 @@
++public class Task {
++    private String[] stringTicket;
++
++    public static void main (String[]args){
++        task2();
++        task3();
++}
++    void task1() {
++        /*
++        В файле Тема4-Исключения.docx лежит задание по исключениям.
++         */
++    }
++
++     static void task2(){}
++             //Почему нельзя получить элемент из списка ниже?
++
++            /*public static <T> T getFirst(List<? super T> list) {
++                return list.get(0);
++                Нельзя прочитать элемент из контейнера с wildcard ? super, кроме объекта класса Object
++                public static <T> Object getFirst(List<? super T> list) {
++        return list.get(0);
++             */
++
++    static void task3() {
++        /*
++        В системе есть пользователь, пусть это будет класс User.
++        Добавим в систему еще 5 классов, Ticket, TicketBus, TicketCinema, TicketMuseum и TicketTrain
++        Система фиксирует место куда пользователь едет по билету и место от куда он едет.
++        Вам необходимо модифицировать класс User так, что бы можно было использовать только TicketTrain, Ticket и TicketBus.
++
++        Так же в конструкторе класса User должна быть реализована проверка на null,
++         это значение одного или второго параметра конструкторе null, то система должна выкинуть кастомный эксепшен с текстом 'Билет не может быть null'
++
++        Как видно из примера ниже, можно установить любые классы
++        Ticket ticket1 = new Ticket();
++        Ticket ticket2 = new Ticket();
++        User user = new User(new TicketCinema(), ticket2);
++         */
++
++        TicketBus ticket1 = new TicketBus();
++        TicketTrain ticket2 = new TicketTrain();
++        try {
++            User user = new <TicketTransport>User(ticket1, ticket2);
++        } catch (Exception e) {
++            System.out.println(e.getMessage());
++        }
++
++
++    }
++
++}
+\ No newline at end of file
+Index: lesson6.3/src/Ticket.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/lesson6.3/src/Ticket.java b/lesson6.3/src/Ticket.java
+new file mode 100644
+--- /dev/null	(revision 88cbff73d574397a4a325e5e580abbbc4fb8169d)
++++ b/lesson6.3/src/Ticket.java	(revision 88cbff73d574397a4a325e5e580abbbc4fb8169d)
+@@ -0,0 +1,4 @@
++public class Ticket implements TicketTransport {
++
++
++ }
+Index: lesson6.3/src/TicketBus.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/lesson6.3/src/TicketBus.java b/lesson6.3/src/TicketBus.java
+new file mode 100644
+--- /dev/null	(revision 88cbff73d574397a4a325e5e580abbbc4fb8169d)
++++ b/lesson6.3/src/TicketBus.java	(revision 88cbff73d574397a4a325e5e580abbbc4fb8169d)
+@@ -0,0 +1,3 @@
++public class TicketBus implements TicketTransport {
++
++}
+Index: lesson6.3/src/TicketCinema.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/lesson6.3/src/TicketCinema.java b/lesson6.3/src/TicketCinema.java
+new file mode 100644
+--- /dev/null	(revision 88cbff73d574397a4a325e5e580abbbc4fb8169d)
++++ b/lesson6.3/src/TicketCinema.java	(revision 88cbff73d574397a4a325e5e580abbbc4fb8169d)
+@@ -0,0 +1,2 @@
++public class TicketCinema {
++}
+Index: lesson6.3/src/TicketMuseum.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/lesson6.3/src/TicketMuseum.java b/lesson6.3/src/TicketMuseum.java
+new file mode 100644
+--- /dev/null	(revision 88cbff73d574397a4a325e5e580abbbc4fb8169d)
++++ b/lesson6.3/src/TicketMuseum.java	(revision 88cbff73d574397a4a325e5e580abbbc4fb8169d)
+@@ -0,0 +1,3 @@
++public class TicketMuseum {
++
++}
+Index: lesson6.3/src/TicketTrain.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/lesson6.3/src/TicketTrain.java b/lesson6.3/src/TicketTrain.java
+new file mode 100644
+--- /dev/null	(revision 88cbff73d574397a4a325e5e580abbbc4fb8169d)
++++ b/lesson6.3/src/TicketTrain.java	(revision 88cbff73d574397a4a325e5e580abbbc4fb8169d)
+@@ -0,0 +1,4 @@
++public class TicketTrain implements TicketTransport {
++
++
++}
+Index: lesson6.3/src/TicketTransport.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/lesson6.3/src/TicketTransport.java b/lesson6.3/src/TicketTransport.java
+new file mode 100644
+--- /dev/null	(revision 88cbff73d574397a4a325e5e580abbbc4fb8169d)
++++ b/lesson6.3/src/TicketTransport.java	(revision 88cbff73d574397a4a325e5e580abbbc4fb8169d)
+@@ -0,0 +1,2 @@
++public interface TicketTransport {
++}
+Index: lesson6.3/src/User.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/lesson6.3/src/User.java b/lesson6.3/src/User.java
+new file mode 100644
+--- /dev/null	(revision 88cbff73d574397a4a325e5e580abbbc4fb8169d)
++++ b/lesson6.3/src/User.java	(revision 88cbff73d574397a4a325e5e580abbbc4fb8169d)
+@@ -0,0 +1,16 @@
++public class User {
++    private String login;
++    private String password;
++
++
++    <T> User(T ticketTo, T ticketFrom) throws Exception {
++        if (ticketTo == null || ticketFrom == null) {
++            throw new Exception("Билет не может быть null");
++        }
++
++        System.out.println(ticketTo);
++        System.out.println(ticketFrom);
++    }
++
++
++}
+\ No newline at end of file
