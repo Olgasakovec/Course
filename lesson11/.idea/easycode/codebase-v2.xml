@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="com.obiscr.chatgpt.settings.EasyCodeState">
+    <option name="projectFiles" value="$PROJECT_DIR$/src/HeavyBox.java;C:/Users/Lenovo/IdeaProjects/course/lesson11/src/IBox.java;C:/Users/Lenovo/IdeaProjects/course/lesson11/src/IFunctional.java;C:/Users/Lenovo/IdeaProjects/course/lesson11/src/Main.java;C:/Users/Lenovo/IdeaProjects/course/lesson11/src/Task.java" />
+    <option name="forceFullIndex" value="false" />
+    <option name="fileSummaryMaps" value="{&quot;C:/Users/Lenovo/IdeaProjects/course/lesson11&quot;:&quot;{\&quot;/src/IBox.java\&quot;:\&quot;\&quot;,\&quot;/src/HeavyBox.java\&quot;:\&quot;\\npublic class HeavyBox {\\r\&quot;,\&quot;/src/IFunctional.java\&quot;:\&quot;\&quot;,\&quot;/src/Main.java\&quot;:\&quot;\&quot;,\&quot;/src/Task.java\&quot;:\&quot;\\npublic class Task {\\r\&quot;}&quot;}" />
+  </component>
+</project>

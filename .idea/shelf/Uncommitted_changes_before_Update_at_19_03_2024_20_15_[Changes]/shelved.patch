@@ -1,0 +1,41 @@
+Index: lesson3/.idea/modules.xml
+===================================================================
+diff --git a/lesson3/.idea/modules.xml b/lesson3/.idea/modules.xml
+deleted file mode 100644
+--- a/lesson3/.idea/modules.xml	(revision 7938ef5b0b5f2eb16846f724a2a5990e50cff928)
++++ /dev/null	(revision 7938ef5b0b5f2eb16846f724a2a5990e50cff928)
+@@ -1,8 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="ProjectModuleManager">
+-    <modules>
+-      <module fileurl="file://$PROJECT_DIR$/lesson3.iml" filepath="$PROJECT_DIR$/lesson3.iml" />
+-    </modules>
+-  </component>
+-</project>
+\ No newline at end of file
+Index: lesson3/.idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_1_8\" default=\"true\" project-jdk-name=\"zulu-1.8\" project-jdk-type=\"JavaSDK\">\r\n    <output url=\"file://$PROJECT_DIR$/out\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/lesson3/.idea/misc.xml b/lesson3/.idea/misc.xml
+--- a/lesson3/.idea/misc.xml	(revision 7938ef5b0b5f2eb16846f724a2a5990e50cff928)
++++ b/lesson3/.idea/misc.xml	(date 1710868094563)
+@@ -1,5 +1,14 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
++  <component name="ExternalStorageConfigurationManager" enabled="true" />
++  <component name="MavenProjectsManager">
++    <option name="originalFiles">
++      <list>
++        <option value="$PROJECT_DIR$/pom.xml" />
++      </list>
++    </option>
++    <option name="workspaceImportForciblyTurnedOn" value="true" />
++  </component>
+   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="zulu-1.8" project-jdk-type="JavaSDK">
+     <output url="file://$PROJECT_DIR$/out" />
+   </component>
