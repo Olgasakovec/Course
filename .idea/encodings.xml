@@ -15,8 +15,11 @@
     <file url="file://$PROJECT_DIR$/lesson4.2/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/lesson5.2/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/lesson5.2/src/main/resources" charset="UTF-8" />
+<<<<<<< HEAD
     <file url="file://$PROJECT_DIR$/lesson_git/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/lesson_git/src/main/resources" charset="UTF-8" />
+=======
+>>>>>>> 59aad3e4392c87a22ba540b84624224e87679776
     <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/test3/src/main/java" charset="UTF-8" />
