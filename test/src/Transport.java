@@ -1,4 +1,12 @@
 public class Transport {
+<<<<<<< HEAD
+    private double power;
+    private double maxSpeed;
+    private double weight;
+    private String brand;
+
+    public Transport (double power, double maxSpeed, double weight, String brand){
+=======
     public Transport() {
 
     }
@@ -14,16 +22,23 @@ public class Transport {
 
 
     public Transport(double power, double maxSpeed, double weight, String brand) {
+>>>>>>> main
         this.power = power;
         this.maxSpeed = maxSpeed;
         this.weight = weight;
         this.brand = brand;
     }
+<<<<<<< HEAD
+    public double getPower(){
+        return power;
+    }
+=======
 
     public double getPower() {
         return power;
     }
 
+>>>>>>> main
     public double getMaxSpeed() {
         return maxSpeed;
     }
@@ -36,6 +51,12 @@ public class Transport {
         return brand;
     }
 
+<<<<<<< HEAD
+    public double convertPowerToKilowatts(){
+        return getPower() * 0.74;
+    }
+}
+=======
     public double convertPowerToKilowatts() {
         return getPower() * 0.74;
     }
@@ -59,3 +80,4 @@ public class Transport {
 
 }
 
+>>>>>>> main
