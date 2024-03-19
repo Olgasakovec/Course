@@ -10,21 +10,7 @@
     <name>course</name>
     <url>http://maven.apache.org</url>
     <modules>
-        <module>git_lesson</module>
-        <module>1lesson</module>
-        <module>2lesson</module>
-        <module>3lesson</module>
-        <module>4lesson</module>
-        <module>5lesson</module>
-        <module>6lesson</module>
-        <module>7lesson</module>
-        <module>8lesson</module>
-        <module>9lesson</module>
-        <module>10lesson</module>
-        <module>11lesson</module>
-        <module>12lesson</module>
-        <module>maven_lesson</module>
-        <module>test_lesson</module>
+
     </modules>
 
     <properties>
