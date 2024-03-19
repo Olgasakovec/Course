@@ -10,6 +10,10 @@ public class PassengerCar extends Ground {
     }
 
     public String getDescription() {
+<<<<<<< HEAD
+     return super.getDescription() + String.format("bodyType is %s", passengerCount is %s", bodyType, passengerCount);
+=======
      return super.getDescription() + String.format("bodyType is %s" + passengerCount + "is %s" + bodyType + passengerCount);
+>>>>>>> main
     }
 }
