@@ -10,26 +10,13 @@
     <name>course</name>
     <url>http://maven.apache.org</url>
     <modules>
-        <module>git_practice</module>
         <module>lesson_git</module>
-        <module>lesson1</module>
+        <module>lesson01</module>
         <module>lesson2</module>
         <module>lesson3</module>
         <module>lesson4.2</module>
         <module>lesson5.2</module>
-        <module>lesson6.3</module>
-        <module>lesson6.5</module>
-        <module>lesson7.1</module>
-        <module>lesson8</module>
-        <module>lesson9</module>
-        <module>lesson10</module>
-        <module>lesson11</module>
-        <module>lesson12</module>
-        <module>maven</module>
-        <module>maven1</module>
-        <module>test</module>
-        <module>test3</module>
-        <module>test4</module>
+
     </modules>
 
     <properties>
@@ -59,7 +46,7 @@
     <build>
         <plugins>
             <plugin>
-                <groupId>org.apache.plugins</groupId>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.0.0-M5</version>
             </plugin>
