@@ -6,6 +6,14 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+<<<<<<< HEAD
+        <module name="git_practice" />
+        <module name="lesson1" />
+        <module name="lesson4.2" />
+        <module name="lesson3" />
+      </profile>
+    </annotationProcessing>
+=======
         <module name="lesson2" />
       </profile>
     </annotationProcessing>
@@ -15,5 +23,6 @@
       <module name="lesson3" target="1.8" />
       <module name="lesson4.2" target="1.8" />
     </bytecodeTargetLevel>
+>>>>>>> main
   </component>
 </project>
