@@ -10,7 +10,11 @@
     <name>course</name>
     <url>http://maven.apache.org</url>
     <modules>
+        <module>lesson01</module>
         <module>lesson2</module>
+        <module>lesson3</module>
+        <module>lesson4.2</module>
+        <module>lesson5.2</module>
 
     </modules>
 
