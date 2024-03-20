@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>sacovec.olga</groupId>
-    <artifactId>lesson_git</artifactId>
+    <artifactId>course</artifactId>
     <version>1.0-SNAPSHOT</version>
   </parent>
   <artifactId>lesson_git</artifactId>
