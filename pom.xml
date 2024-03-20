@@ -25,7 +25,6 @@
         <module>lesson11</module>
         <module>lesson12</module>
         <module>test3</module>
-        <module>maven1</module>
     </modules>
 
     <properties>
