@@ -15,5 +15,8 @@
         <module name="lesson_git" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="git_practice" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
