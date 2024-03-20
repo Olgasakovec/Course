@@ -9,6 +9,7 @@
 
     <name>course</name>
     <url>http://maven.apache.org</url>
+
     <modules>
         <module>lesson_git</module>
         <module>lesson01</module>
