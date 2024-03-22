@@ -5,7 +5,7 @@ public class Buket {
     }
 
     public double getSellFlowers() {
-        double totalPrice;
+        double totalPrice = 0;
         for (Flower flower : flowers) {
             totalPrice += flower.getPrice();
         }
