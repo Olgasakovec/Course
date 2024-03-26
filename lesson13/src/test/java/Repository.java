@@ -11,21 +11,20 @@ public class Repository {
     @BeforeAll
     static void downloadDriver(){
         WebDriverManager.chromedriver().setup();
-
-        options = new ChromeOptions();
-        options.addArguments("--remote-allow-origins=*");
-
-        chromeDriver = new ChromeDriver(options);
     }
 
     @BeforeEach
     void openBrowser(){
+        options = new ChromeOptions();
+        options.addArguments("--remote-allow-origins=*");
+        chromeDriver = new ChromeDriver(options);
         chromeDriver.get(baseUrl);
     }
 
     @Test
     void getCurrentUrlTest1(){
         MainPage mainPage = new MainPage(chromeDriver);
+        mainPage.navigateTo(baseUrl);
         String url = chromeDriver.getCurrentUrl();
         Assertions.assertEquals(baseUrl, url);
     }
@@ -33,6 +32,7 @@ public class Repository {
     @Test
     void getCurrentUrlTest2() {
         MainPage mainPage = new MainPage(chromeDriver);
+        mainPage.navigateTo(baseUrl);
         String url = chromeDriver.getCurrentUrl();
         Assertions.assertEquals("https://google.com/", url);
     }
@@ -40,10 +40,5 @@ public class Repository {
     @AfterEach
     void tearDown(){
         chromeDriver.close();
-    }
-
-    @AfterAll
-    static void close(){
-        chromeDriver.quit();
     }
 }
