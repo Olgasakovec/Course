@@ -39,7 +39,7 @@ public class Junit5 {
 
     @Test
     void checktag(){
-        WebElement checkTagButton = chromeDriver.findElement(By.xpath(//button[contains(text(),'Watch tag')]"))
+        WebElement checkTagButton = chromeDriver.findElement(By.xpath((//button[contains(text(),'Watch tag')]"))
     }
 
     @AfterEach
