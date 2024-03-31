@@ -10,7 +10,7 @@ import java.io.File;
 import java.io.IOException;
 
 public class ClientXmlAuto {
-    private static final String rootPath = System.getProperty("user.dir");
+    static final String rootPath = System.getProperty("user.dir");
 
     @Test
     void example1() throws ParserConfigurationException, SAXException, IOException {
