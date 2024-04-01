@@ -1,8 +1,6 @@
 package sacovec.olga;
-
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -15,7 +13,7 @@ public class PageTitleTest {
 
     @Test
     public void testPageTitle(){
-        String companySite = ClientHandler.getCompanySite();
+        String companySite = ClientXmlAuto.getCompanySite();
         if (companySite != null){
 
             WebDriverManager.chromedriver().setup();

@@ -1,5 +1,4 @@
 package sacovec.olga;
-
 import org.junit.jupiter.api.Test;
 import org.xml.sax.SAXException;
 import javax.xml.parsers.ParserConfigurationException;
@@ -13,21 +12,24 @@ import static sacovec.olga.ClientXmlAuto.rootPath;
 public class SecondEmployeeHandlerTest {
 
     @Test
-    public void testLastJobEmployee1() throws ParserConfigurationException, SAXException, IOException {
+    public void testLastNameEmployee() throws ParserConfigurationException, SAXException, IOException {
         SAXParserFactory factory = SAXParserFactory.newInstance();
         SAXParser parser = factory.newSAXParser();
 
-        File file = new File(rootPath + "src/test/java/employee.xml");
-        EmployeeHandler handler1 = new EmployeeHandler();
-        parser.parse(file,handler1);
+        File file1 = new File(rootPath + "/src/test/java/sacovec.olga/employee.xml");
+        SecondEmployeeHandler handler1 = new SecondEmployeeHandler();
+        parser.parse(file1,handler1);
         System.out.println(handler1.getLastNameEmployee());
         String lastNameEmployee = handler1.getLastNameEmployee();
 
-        File file2 = new File(rootPath + "src/test/java/employee2.xml");
-        EmployeeHandler handler2 = new EmployeeHandler();
+        File file2 = new File(rootPath + "/src/test/java/sacovec.olga/employee2.xml");
+        SecondEmployeeHandler handler2 = new SecondEmployeeHandler();
         parser.parse(file2,handler2);
-        System.out.println(handler2.getLastNameEmployee2());
-        String lastNameEmployee2 = handler2.getLastNameEmployee2();
+        System.out.println(handler2.getLastNameEmployee());
+        String lastNameEmployee2 = handler2.getLastNameEmployee();
         assertNotEquals(lastNameEmployee, lastNameEmployee2);
+
+        System.out.println("Имя последнего сотрудника из employee.xml: " + lastNameEmployee);
+        System.out.println("Имя последнего сотрудника из employee2.xml: " + lastNameEmployee2);
     }
 }

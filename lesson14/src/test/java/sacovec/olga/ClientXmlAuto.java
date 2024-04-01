@@ -1,28 +1,30 @@
 package sacovec.olga;
-
 import org.junit.jupiter.api.Test;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
-
-import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.parsers.SAXParser;
-import javax.xml.parsers.SAXParserFactory;
+import javax.xml.parsers.*;
 import java.io.File;
 import java.io.IOException;
 
 public class ClientXmlAuto {
+    public static String getCompanySite() {
+        String companySite = null;
+        return companySite;
+    }
     static final String rootPath = System.getProperty("user.dir");
 
     @Test
     void example1() throws ParserConfigurationException, SAXException, IOException {
-        SAXParserFactory factory = SAXParserFactory.newInstance();
-        SAXParser parser = factory.newSAXParser();
+        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+        DocumentBuilder builder = factory.newDocumentBuilder();
+        Document doc = builder.parse(new File(rootPath + "/src/test/java/sacovec.olga/client.xml"));
 
-        File file = new File(rootPath + "src/test/java/client.xml");
+        NodeList clientList = doc.getElementsByTagName("client");
+        Element secondToLastClient = (Element) clientList.item(clientList.getLength() - 2);
+        String companySite = secondToLastClient.getElementsByTagName("companySite").item(0).getTextContent();
 
-        ClientHandler handler = new ClientHandler();
-
-        parser.parse(file, handler);
-
-        System.out.println(handler.getClientList());
+        System.out.println("Сайт компании предпоследнего клиента" + companySite);
     }
 }
