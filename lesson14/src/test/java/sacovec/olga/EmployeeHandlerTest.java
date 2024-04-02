@@ -16,7 +16,7 @@ public class EmployeeHandlerTest {
         SAXParserFactory factory = SAXParserFactory.newInstance();
         SAXParser parser = factory.newSAXParser();
 
-        File file = new File(rootPath + "/src/test/java/sacovec.olga/employee.xml");
+        File file = new File(rootPath + "/src/test/java/sacovec/olga/employee.xml");
         EmployeeHandler handler = new EmployeeHandler();
         parser.parse(file,handler);
         System.out.println(handler.getLastJobEmployee());

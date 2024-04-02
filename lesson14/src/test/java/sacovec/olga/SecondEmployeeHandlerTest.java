@@ -16,13 +16,13 @@ public class SecondEmployeeHandlerTest {
         SAXParserFactory factory = SAXParserFactory.newInstance();
         SAXParser parser = factory.newSAXParser();
 
-        File file1 = new File(rootPath + "/src/test/java/sacovec.olga/employee.xml");
+        File file1 = new File(rootPath + "/src/test/java/sacovec/olga/employee.xml");
         SecondEmployeeHandler handler1 = new SecondEmployeeHandler();
         parser.parse(file1,handler1);
         System.out.println(handler1.getLastNameEmployee());
         String lastNameEmployee = handler1.getLastNameEmployee();
 
-        File file2 = new File(rootPath + "/src/test/java/sacovec.olga/employee2.xml");
+        File file2 = new File(rootPath + "/src/test/java/sacovec/olga/employee2.xml");
         SecondEmployeeHandler handler2 = new SecondEmployeeHandler();
         parser.parse(file2,handler2);
         System.out.println(handler2.getLastNameEmployee());
