@@ -11,6 +11,7 @@ import java.io.IOException;
 public class ClientXmlAuto {
     static final String rootPath = System.getProperty("user.dir");
 
+
     public static String getCompanySite()  throws ParserConfigurationException, SAXException, IOException {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder = factory.newDocumentBuilder();

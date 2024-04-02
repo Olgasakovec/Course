@@ -3,6 +3,11 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.xml.sax.SAXException;
+
+import javax.xml.parsers.ParserConfigurationException;
+import java.io.IOException;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class PageTitleTest {
@@ -12,7 +17,7 @@ public class PageTitleTest {
     private static ChromeOptions options;
 
     @Test
-    public void testPageTitle(){
+    public void testPageTitle() throws ParserConfigurationException, IOException, SAXException {
         String companySite = ClientXmlAuto.getCompanySite();
         if (companySite != null){
 
