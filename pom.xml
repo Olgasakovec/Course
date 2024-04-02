@@ -25,8 +25,13 @@
         <module>lesson11</module>
         <module>lesson12</module>
         <module>lesson13</module>
-        <module>test3</module>
         <module>lesson14</module>
+        <module>test3</module>
+<<<<<<< HEAD
+        <module>lesson14</module>
+=======
+
+>>>>>>> main
     </modules>
 
     <properties>
