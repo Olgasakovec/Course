@@ -14,17 +14,21 @@ public class LogTest {
 
     static ChromeOptions options;
     static WebDriver driver;
+    private final static String url = "file:///"+System.getProperty("user.dir")+"/src/test/java/sacovec/olga/Variant3.html";
 
     @BeforeAll
     static void downloadDriver(){
         WebDriverManager.chromedriver().clearDriverCache().setup();
-        driver.manage().window().maximize();
         options = new ChromeOptions();
-    }
-    @BeforeEach
-    void prepareBrowser(){
         options.addArguments("--remote-allow-origins=*");
+    }
+
+    @BeforeEach
+    void openBrowser(){
         driver = new ChromeDriver(options);
+        driver.manage().window().maximize();
+        String userDir = System.getProperty("user.dir");
+        driver.get("file:///" + userDir + "/src/test/java/sacovec/olga/Variant3.html");
     }
 
     @AfterEach
@@ -34,14 +38,13 @@ public class LogTest {
 
     @Test
     void loginTest(){
-        String userDir = System.getProperty("user.dir");
-        driver.get("file:///" + userDir + "/src/test/java/sacovec/olga/Variant3.html");
-
         WebElement inputField = driver.findElement(By.id("field1"));
         inputField.sendKeys("55555");
 
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.attributeToBe(inputField, "value", "555"));
+        String fieldValue = inputField.getAttribute("value");
+        Assertions.assertTrue(fieldValue.length()<=3);
 
         WebElement passwordField = driver.findElement(By.id("field2"));
         String expectedText = "123qwerty";
@@ -53,36 +56,35 @@ public class LogTest {
         String fieldType = passwordField.getAttribute("type");
         Assertions.assertEquals("password", fieldType);
 
-        WebElement numberField = driver.findElement(By.id("field3"));
+        WebElement textField = driver.findElement(By.id("field3"));
         String letters = "text";
-        numberField.sendKeys(letters);
+        textField.sendKeys(letters);
+        String textInField = textField.getAttribute("value");
+        Assertions.assertTrue(textInField.isEmpty(), "Поле должно оставаться пустым после ввода букв");
+        textField.clear();
 
-        String textInField = numberField.getAttribute("value");
-        Assertions.assertTrue(textInField.isEmpty());
-
+        WebElement numberField = driver.findElement(By.id("field3"));
         String numbers = "12345";
         numberField.sendKeys(numbers);
-
         String numberInField = numberField.getAttribute("value");
-        Assertions.assertEquals(numbers, numberInField);
+        Assertions.assertEquals(numbers, numberInField, "Цифры в поле не соответствуют");
     }
 
     @Test
     public void testPageTitle() {
-        String userDir = System.getProperty("user.dir");
-        driver.get("file:///" + userDir + "/src/test/java/sacovec/olga/Variant3.html");
-
+        String expectedTitle = "Varian3";
         String actualTitle = driver.getTitle();
-        String expectedTitle = "Expected title";
         Assertions.assertEquals(expectedTitle, actualTitle);
 
-        String labelText = driver.findElement(By.className("btn")).getText();
-        Assertions.assertEquals("Expected label Text", labelText);
+        WebElement labelField2 = driver.findElement(By.cssSelector("label[for='field2']"));
+        String expectedLabelText = "Введите пароль:";
+        String actualLabelText = labelField2.getText();
+        Assertions.assertEquals(expectedLabelText, actualLabelText);
 
         String buttonTextColor = driver.findElement(By.className("btn")).getCssValue("color");
-        Assertions.assertEquals("orange", buttonTextColor);
+        Assertions.assertEquals("rgba(255, 165, 0, 1)", buttonTextColor);
 
-        WebElement image = driver.findElement(By.name("Git"));
+        WebElement image = driver.findElement(By.cssSelector("img[alt='Git']"));
         int imageWidth = image.getSize().getWidth();
         int imageHeight = image.getSize().getHeight();
         Assertions.assertEquals(100, imageWidth);
@@ -94,29 +96,29 @@ public class LogTest {
 
     @Test
     public void testLastButton() {
-        WebElement lastField = driver.findElement(By.id("field3"));
-        String lastFieldText = "12345";
-        lastField.sendKeys(lastFieldText);
-
         WebElement firstField = driver.findElement(By.id("field1"));
         String firstFieldText = "Yes";
         firstField.sendKeys(firstFieldText);
-
-        Assertions.assertEquals(lastFieldText, lastField.getAttribute("value"));
         Assertions.assertEquals(firstFieldText, firstField.getAttribute("value"));
+
+        WebElement lastField = driver.findElement(By.id("field3"));
+        String lastFieldText = "12345";
+        lastField.sendKeys(lastFieldText);
+        Assertions.assertEquals(lastFieldText, lastField.getAttribute("value"));
+
         WebElement secondFile = driver.findElement(By.name("field2"));
         Assertions.assertEquals("", secondFile.getAttribute("value"));
 
         WebElement buttonSend = driver.findElement(By.xpath("//button[text()='Send']"));
         Assertions.assertTrue(buttonSend.isEnabled());
         buttonSend.click();
-        Assertions.assertEquals(driver.getCurrentUrl(), "file:///D:/course/lesson15/src/test/java/sacovec/olga/Variant3.html" );
+        Assertions.assertEquals(driver.getCurrentUrl(), url, "URL не совпадает");
 
         WebElement buttonCancel = driver.findElement(By.xpath("//button[text()='Cancel']"));
         Assertions.assertTrue(buttonCancel.isEnabled());
 
         WebElement redirectButton = driver.findElement(By.className("btn"));
         redirectButton.click();
-        Assertions.assertEquals(driver.getCurrentUrl(), "file:///D:/course/lesson15/src/test/java/sacovec/olga/Variant3.html");
+        Assertions.assertEquals(driver.getCurrentUrl(), url, "URL совпадает");
     }
 }

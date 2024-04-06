@@ -7,26 +7,4 @@
     <version>1.0-SNAPSHOT</version>
   </parent>
   <artifactId>lesson15</artifactId>
-  <dependencies>
-    <dependency>
-      <groupId>org.testng</groupId>
-      <artifactId>testng</artifactId>
-      <version>7.0.0</version>
-    </dependency>
-      </dependencies>
-  <build>
-    <plugins>
-
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-surefire-plugin</artifactId>
-        <version>3.0.0-M4</version>
-        <configuration>
-          <suiteXmlFiles>
-            <suiteXmlFile>ReportRunner.xml</suiteXmlFile>
-          </suiteXmlFiles>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
 </project>
