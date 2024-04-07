@@ -14,7 +14,7 @@ public class LogTest {
 
     static ChromeOptions options;
     static WebDriver driver;
-    private final static String url = "file:///"+System.getProperty("user.dir")+"/src/test/java/sacovec/olga/Variant3.html";
+    private final static String url = "file:///" + System.getProperty("user.dir").replace("\\", "/") + "/src/test/java/sacovec/olga/Variant3.html";
 
     @BeforeAll
     static void downloadDriver(){
@@ -28,7 +28,7 @@ public class LogTest {
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
         String userDir = System.getProperty("user.dir");
-        driver.get("file:///" + userDir + "/src/test/java/sacovec/olga/Variant3.html");
+        driver.get(url);
     }
 
     @AfterEach
@@ -44,7 +44,7 @@ public class LogTest {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.attributeToBe(inputField, "value", "555"));
         String fieldValue = inputField.getAttribute("value");
-        Assertions.assertTrue(fieldValue.length()<=3);
+        Assertions.assertEquals("555", fieldValue);
 
         WebElement passwordField = driver.findElement(By.id("field2"));
         String expectedText = "123qwerty";
@@ -115,10 +115,11 @@ public class LogTest {
         Assertions.assertEquals(driver.getCurrentUrl(), url, "URL не совпадает");
 
         WebElement buttonCancel = driver.findElement(By.xpath("//button[text()='Cancel']"));
-        Assertions.assertTrue(buttonCancel.isEnabled());
+        Assertions.assertTrue(buttonCancel.isDisplayed());
+        Assertions.assertFalse(buttonCancel.isEnabled());
 
         WebElement redirectButton = driver.findElement(By.className("btn"));
         redirectButton.click();
-        Assertions.assertEquals(driver.getCurrentUrl(), url, "URL совпадает");
+        Assertions.assertEquals(driver.getCurrentUrl(), "https://github.com/", "URL совпадает");
     }
 }
