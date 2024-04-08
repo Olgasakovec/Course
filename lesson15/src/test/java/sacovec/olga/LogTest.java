@@ -27,7 +27,6 @@ public class LogTest {
     void openBrowser(){
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
-        String userDir = System.getProperty("user.dir");
         driver.get(url);
     }
 
