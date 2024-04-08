@@ -25,7 +25,7 @@
         <module>lesson11</module>
         <module>lesson12</module>
         <module>lesson13</module>
-        <module>lesson14</module>
+        <module>lesson15</module>
         <module>test3</module>
 
     </modules>
@@ -54,7 +54,6 @@
             <version>5.7.0</version>
         </dependency>
     </dependencies>
-
     <build>
         <plugins>
             <plugin>
