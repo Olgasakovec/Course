@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Varian3</title>
+    <style>
+        .btn {
+         display: inline-block;
+         color: orange;;
+         border: 2px solid black;
+         text-shadow: 1px 1px 1px #000;
+         padding: 1rem 1.5rem; /* Поля вокруг текста */
+         text-decoration: none;
+         border-radius: 6px; /
+        }
+    </style>
+</head>
+<body>
+<a href="https://github.com/" class="btn">Перейти на GitHub</a><br><br>
+<img src="https://git-scm.com/images/logos/downloads/Git-Logo-Black.png" width="100" height="55" alt="Git"><br><br>
+<form>
+    <label for="field1">Введите 3 символа:</label><br>
+    <input type="text" id="field1" name="field1" maxlength="3" placeholder="максимум 3 символа"><br><br>
+
+    <label for="field2">Введите пароль:</label><br>
+    <input type="password" id="field2" name="field2" placeholder="password"><br><br>
+
+    <label for="field3">Введите только числа:</label><br>
+    <input type="number" id="field3" name="field3" pattern="[0-9]*" placeholder="ввод только чисел"><br><br>
+
+    <button onclick="return false;">Send</button>
+    <button disabled>Cancel</button>
+</form>
+</body>
+</html>
