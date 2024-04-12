@@ -1,4 +1,4 @@
-package org.example;
+package sacovec.olga;
 
 import org.junit.jupiter.api.Test;
 
