@@ -16,10 +16,10 @@ public class Jetbrains {
     static ChromeOptions options;
     static WebDriver driver;
 
-    private By developerToolLocator = By.xpath("//*[@id='wt-site-header']/div/div/div[2]/div[1]/div/nav/div[1]/button");
-    private By intellijIdeaLocator = By.xpath("//*[@id='wt-site-header']/div/div/div[2]/div[1]/div/nav/div[1]/div/div/div/div[1]/div[1]/div[1]/div/div/div[2]/div/div[1]/a/span/span");
-    private By pyCharmLocator = By.xpath("//*[@id='wt-site-header']/div/div/div[2]/div[1]/div/nav/div[1]/div/div/div/div[1]/div[1]/div[1]/div/div/div[2]/div/div[3]");
-    private By takeVideoLocator = By.xpath("//*[@id='overview-content']/section[1]/div/div[2]/button");
+    private By developerToolLocator = By.xpath("//button[@type='button' and @aria-label='Developer Tools: Open submenu']");
+    private By intellijIdeaLocator = By.xpath("//span[@class='_mainSubmenuItem__titlePart_oppnk'] /span[@class='rs-text-2 rs-text-2_theme_light _mainSubmenuItem__title_3d77w _mainSubmenuItem__titleWithLogo_3zbq8']");
+    private By pyCharmLocator = By.xpath("//a[@href='/phpstorm/']");
+    private By takeVideoLocator = By.xpath("//button[@type='button' and @aria-label='Play video' and contains(text(), 'Watch video')]");
     private By videoTitleLocator = By.xpath("//div[@class='c12b5a4e69860bc968b47223fd-history-item-container']//a[@href='https://www.jetbrains.com/pycharm/']");
     private By aquaLocator = By.xpath("//div[@class='_mainSubmenuItem_eh7nx _mainSubmenuItem_ldwkw _mainSubmenuItem_9vhph']");
     private By documentationLocator = By.xpath("//a[@class='wt-col-inline wt-text-2 menu-second__link wt-text-2_theme_dark _theme-dark wt-text-2_hardness_average menu-item']");
@@ -93,6 +93,7 @@ public class Jetbrains {
 
         Actions actions = new Actions(driver);
         WebElement aqua = driver.findElement(aquaLocator);
+        actions.moveToElement(aqua).perform();
 
         driver.get("https://www.jetbrains.com/aqua/");
         WebElement documentation = driver.findElement(documentationLocator);
