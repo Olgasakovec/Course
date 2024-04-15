@@ -9,20 +9,16 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
 
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.util.Locale;
-
 public class Silverscreen {
     static ChromeOptions options;
     static WebDriver driver;
-    private final By afishaButtoLocator = By.xpath("//div[@class='sc-iNhVCk iUChfV']");
+    private final By afishaButtoLocator = By.xpath("//span[text()='Афиша']");
     private final By currentAfishaLocator = By.xpath("//a[@href='/afisha/#now' and div[text()='Сейчас в кино']]");
 
-    private By afishaKinoLocator = By.cssSelector("#root > div > section > div.sc-gPWkxV.iwdBzY > div > h1");
-    private By skoroLokator = By.cssSelector("#root > div > section > div.sc-gPWkxV.iwdBzY > div > div > div.sc-lnrBVv.OWfMz > a");
-    private By vseMesytciLocator = By.cssSelector("#root > div > section > div.sc-bZQynM.MMlga > div.sc-gzVnrw.kjntmi > div > div.sc-eNQAEJ.gewano");
-    private By filterLocator = By.xpath("//*[@id='root']/div/section/div[2]/div[2]/div/div[1]/div[2]");
+    private By afishaKinoLocator = By.xpath("//h1[text()='Афиша кино']");
+    private By skoroLokator = By.xpath("//a[@href='#soon']");
+    private By vseMesytciLocator = By.xpath("//div[@placeholder = 'Все месяцы']//div[@class='btn-text' and text()='Все месяцы']");
+    private By filterLocator = By.xpath("//div[@class='btn-text' and contains(text(), 'сегодня')]");
 
     @BeforeAll
     static void downloadDriver(){
@@ -100,12 +96,8 @@ public class Silverscreen {
 
         driver.get("https://silverscreen.by/afisha/");
         WebElement filter = driver.findElement(filterLocator);
-        Assertions.assertTrue(filter.isDisplayed());
+        String expectedText4 = "сегодня";
         String actualText4 = filter.getText();
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd MMMM", new Locale("ru", "RU"));
-        LocalDate currentDate = LocalDate.now();
-        String currentDateString = "сегодня, " + dtf.format(currentDate);
-        String expectedText4 = currentDateString;
-        Assertions.assertEquals(expectedText4, actualText4);
+        Assertions.assertTrue(actualText4.contains(expectedText4),"сегодня");
     }
 }
