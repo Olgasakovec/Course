@@ -29,6 +29,7 @@
         <module>lesson15</module>
         <module>test3</module>
         <module>lesson16</module>
+        <module>lesson18</module>
 
     </modules>
 
@@ -39,7 +40,6 @@
     </properties>
 
     <dependencies>
-        <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
