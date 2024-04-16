@@ -2,30 +2,32 @@ package sacovec.olga;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.*;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Cookie;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
+
 public class Jetbrains {
     static ChromeOptions options;
     static WebDriver driver;
 
     private By developerToolLocator = By.xpath("//button[@type='button' and @aria-label='Developer Tools: Open submenu']");
+    private By teamToolsLocator = By.xpath("//button[@type='button' and @aria-label='Team Tools: Open submenu']");
+    private By dataLoreLocator = By.xpath("//a[@href='/datalore/' and //span[@class='rs-text-2 rs-text-2_theme_light _mainSubmenuItem__title_3d77w']]");
     private By intellijIdeaLocator = By.xpath("//span[@class='_mainSubmenuItem__titlePart_oppnk'] /span[@class='rs-text-2 rs-text-2_theme_light _mainSubmenuItem__title_3d77w _mainSubmenuItem__titleWithLogo_3zbq8']");
-    private By pyCharmLocator = By.xpath("//a[@href='/phpstorm/']");
-    private By takeVideoLocator = By.xpath("//button[@type='button' and @aria-label='Play video' and contains(text(), 'Watch video')]");
-    private By videoTitleLocator = By.xpath("//div[@class='c12b5a4e69860bc968b47223fd-history-item-container']//a[@href='https://www.jetbrains.com/pycharm/']");
+    private By watchOverviewLocator = By.xpath("//button[@data-test='button' and contains(text(), 'Watch overview')]");
+    private By videoTitleLocator = By.xpath("//div[@class='ytp-title-link yt-uix-sessionlink']//a[@href='https://www.youtube.com/watch?v=LFiINOnA2cY']");
+    private  By videoAreaLocator = By.xpath("//div[@class='html5-video-container']//video[contains(@class, 'video-stream') and @src='blob:https://www.youtube.com/96ee3a0b-ef90-467b-a945-61aaab2fd162']");
     private By aquaLocator = By.xpath("//div[@class='_mainSubmenuItem_eh7nx _mainSubmenuItem_ldwkw _mainSubmenuItem_9vhph']");
     private By documentationLocator = By.xpath("//a[@class='wt-col-inline wt-text-2 menu-second__link wt-text-2_theme_dark _theme-dark wt-text-2_hardness_average menu-item']");
     private By overviewLocator = By.xpath("//a[@class='starting-page-card starting-page-title__card _card_1uu62mp_6 _themeLight_1uu62mp_30 _modeClassic_1uu62mp_43 _paddings24_1uu62mp_167 _bordersRadius0_1uu62mp_175']");
     private By userInterfaceLocator = By.xpath("//li[@data-toc-scroll='Guided_Tour_Around_the_User_Interface']/a");
     private By pictureLocator = By.cssSelector("img.article__img.article__bordered-element");
+    private By cookieValueLocator = By.xpath("//div[@class='jetbrains-cookies-banner-3__text-content']");
 
     @BeforeAll
     static void downloadDriver() {
@@ -56,10 +58,8 @@ public class Jetbrains {
         WebElement intellijIdeas = driver.findElement(intellijIdeaLocator);
         actions.moveToElement(intellijIdeas).perform();
 
-        String cookieValue = "Our website uses some cookies and records your IP address for the purposes of accessibility, security, and managing your access to the telecommunication network. You can disable data collection and cookies by changing your browser settings, but it may affect how this website functions. Learn more. With your consent, JetBrains may also use cookies and your IP address to collect individual statistics and provide you with personalized offers and ads subject to the Privacy Policy and the Terms of Use. JetBrains may use third-party services for this purpose. You can adjust or withdraw your consent at any time by visiting the Opt-Out page. [A]ccept All[M]anage Settings";
-        Cookie cookie = new Cookie("jetbrains-cookies-banner-3", cookieValue);
-        driver.manage().addCookie(cookie);
-        System.out.println(driver.manage().getCookies());
+        WebElement cookieValue = driver.findElement(cookieValueLocator);
+        Assertions.assertTrue(cookieValue.isDisplayed());
     }
 
     @Test
@@ -67,20 +67,24 @@ public class Jetbrains {
         driver.get("https://www.jetbrains.com/");
         driver.manage().window().maximize();
 
-        WebElement developerTools = driver.findElement(developerToolLocator);
-        developerTools.click();
+        WebElement teamTools = driver.findElement(teamToolsLocator);
+        teamTools.click();
 
         Actions actions = new Actions(driver);
-        WebElement pyCharm = driver.findElement(pyCharmLocator);
-        actions.moveToElement(pyCharm).perform();
+        WebElement dataLore = driver.findElement(dataLoreLocator);
+        actions.moveToElement(dataLore).perform();
 
-        driver.get("https://www.jetbrains.com/pycharm/");
-        WebElement takeVideo = driver.findElement(takeVideoLocator);
-        takeVideo.click();
+        driver.get("https://www.jetbrains.com/datalore/");
+        WebElement watchOverview = driver.findElement(watchOverviewLocator);
+        watchOverview.click();
 
-        WebElement videoTitle = new WebDriverWait(driver, java.time.Duration.ofSeconds(10))
-                .until(ExpectedConditions.elementToBeClickable(videoTitleLocator));
-        Assertions.assertEquals("Getting Started with PyCharm: Quick Tour", videoTitle.getText());
+        WebElement videoArea = new WebDriverWait(driver, Duration.ofSeconds(15))
+                .until(ExpectedConditions.elementToBeClickable(videoAreaLocator));
+        videoArea.click();
+
+        WebElement videoTitle = new WebDriverWait(driver, Duration.ofSeconds(15))
+                .until(ExpectedConditions.visibilityOfElementLocated(videoTitleLocator));
+        Assertions.assertTrue(videoTitle.isDisplayed());
     }
 
     @Test
@@ -108,9 +112,9 @@ public class Jetbrains {
         userInterface.click();
 
         WebElement picture = driver.findElement(pictureLocator);
-        int picWidth = picture.getSize().getWidth();
-        int picHeight = picture.getSize().getHeight();
-        Assertions.assertEquals(3008, picWidth);
-        Assertions.assertEquals(1406, picHeight);
+        int naturalWidth = picture.nat;
+        int naturalHeight = picture.getHeight();
+        Assertions.assertEquals(3008, naturalWidth);
+        Assertions.assertEquals(1406, naturalHeight);
     }
 }
