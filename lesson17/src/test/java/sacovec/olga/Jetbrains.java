@@ -11,6 +11,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
+import static javax.xml.bind.JAXBIntrospector.getValue;
+
 public class Jetbrains {
     static ChromeOptions options;
     static WebDriver driver;
@@ -18,15 +20,15 @@ public class Jetbrains {
     private By developerToolLocator = By.xpath("//button[@type='button' and @aria-label='Developer Tools: Open submenu']");
     private By teamToolsLocator = By.xpath("//button[@type='button' and @aria-label='Team Tools: Open submenu']");
     private By dataLoreLocator = By.xpath("//a[@href='/datalore/' and //span[@class='rs-text-2 rs-text-2_theme_light _mainSubmenuItem__title_3d77w']]");
-    private By intellijIdeaLocator = By.xpath("//span[@class='_mainSubmenuItem__titlePart_oppnk'] /span[@class='rs-text-2 rs-text-2_theme_light _mainSubmenuItem__title_3d77w _mainSubmenuItem__titleWithLogo_3zbq8']");
+    private By intellijIdeaLocator = By.xpath("//span[@class='_mainSubmenuItem__titlePart_oppnk'] /span[@class='rs-text-2 rs-text-2_theme_light _mainSubmenuItem__title_3d77w _mainSubmenuItem__titleWithLogo_3zbq8')// and text()= 'IntelliJ IDEA']");
     private By watchOverviewLocator = By.xpath("//button[@data-test='button' and contains(text(), 'Watch overview')]");
     private By videoTitleLocator = By.xpath("//div[@class='ytp-title-link yt-uix-sessionlink']//a[@href='https://www.youtube.com/watch?v=LFiINOnA2cY']");
-    private  By videoAreaLocator = By.xpath("//div[@class='html5-video-container']//video[contains(@class, 'video-stream') and @src='blob:https://www.youtube.com/96ee3a0b-ef90-467b-a945-61aaab2fd162']");
+    private By iFrameLocator = By.xpath("//iframe[@class='wt-youtube-player__player']");
     private By aquaLocator = By.xpath("//div[@class='_mainSubmenuItem_eh7nx _mainSubmenuItem_ldwkw _mainSubmenuItem_9vhph']");
     private By documentationLocator = By.xpath("//a[@class='wt-col-inline wt-text-2 menu-second__link wt-text-2_theme_dark _theme-dark wt-text-2_hardness_average menu-item']");
     private By overviewLocator = By.xpath("//a[@class='starting-page-card starting-page-title__card _card_1uu62mp_6 _themeLight_1uu62mp_30 _modeClassic_1uu62mp_43 _paddings24_1uu62mp_167 _bordersRadius0_1uu62mp_175']");
     private By userInterfaceLocator = By.xpath("//li[@data-toc-scroll='Guided_Tour_Around_the_User_Interface']/a");
-    private By pictureLocator = By.cssSelector("img.article__img.article__bordered-element");
+    private By pictureLocator = By.xpath("//img[@src='https://resources.jetbrains.com/help/img/idea/aqua_locators_evaluator.png']");
     private By cookieValueLocator = By.xpath("//div[@class='jetbrains-cookies-banner-3__text-content']");
 
     @BeforeAll
@@ -78,13 +80,13 @@ public class Jetbrains {
         WebElement watchOverview = driver.findElement(watchOverviewLocator);
         watchOverview.click();
 
-        WebElement videoArea = new WebDriverWait(driver, Duration.ofSeconds(15))
-                .until(ExpectedConditions.elementToBeClickable(videoAreaLocator));
-        videoArea.click();
+        WebElement iFrame = new WebDriverWait(driver, Duration.ofSeconds(15))
+                .until(ExpectedConditions.elementToBeClickable(iFrameLocator));
+        driver.switchTo().frame(iFrame);
 
         WebElement videoTitle = new WebDriverWait(driver, Duration.ofSeconds(15))
-                .until(ExpectedConditions.visibilityOfElementLocated(videoTitleLocator));
-        Assertions.assertTrue(videoTitle.isDisplayed());
+                .until(ExpectedConditions.elementToBeClickable(videoTitleLocator));
+        Assertions.assertEquals("Video title", videoTitle.getText());
     }
 
     @Test
@@ -111,10 +113,16 @@ public class Jetbrains {
         WebElement userInterface = driver.findElement(userInterfaceLocator);
         userInterface.click();
 
+        driver.get("https://www.jetbrains.com/help/aqua/guided-tour-around-the-user-interface.html");
         WebElement picture = driver.findElement(pictureLocator);
-        int naturalWidth = picture.nat;
-        int naturalHeight = picture.getHeight();
-        Assertions.assertEquals(3008, naturalWidth);
-        Assertions.assertEquals(1406, naturalHeight);
+        String naturalWidth = picture.getAttribute("naturalWidth");
+        String naturalHeight = picture.getAttribute("naturalHeight");
+
+
+        String expectedWidth = "3008";
+        String expectedHeight = "1406";
+
+        Assertions.assertEquals(expectedWidth,naturalWidth);
+        Assertions.assertEquals(expectedHeight, naturalHeight);
     }
 }
