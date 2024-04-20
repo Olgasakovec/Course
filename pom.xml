@@ -25,11 +25,17 @@
         <module>lesson11</module>
         <module>lesson12</module>
         <module>lesson13</module>
+<<<<<<< HEAD
         <module>lesson14</module>
+=======
+>>>>>>> c583f6d9562e9dcac9eacc6e41a2797eac9b7702
         <module>lesson15</module>
         <module>test3</module>
         <module>lesson17</module>
+        <module>lesson16</module>
+
     </modules>
+
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
