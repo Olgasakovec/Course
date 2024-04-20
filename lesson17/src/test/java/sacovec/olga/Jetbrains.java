@@ -15,14 +15,14 @@ public class Jetbrains {
 
     private By developerToolLocator = By.xpath("//button[@type='button' and @aria-label='Developer Tools: Open submenu']");
     private By teamToolsLocator = By.xpath("//button[@type='button' and @aria-label='Team Tools: Open submenu']");
-    private By dataLoreLocator = By.xpath("//span[contains(@class, 'rs-text-2') and contains(text(), 'A collaborative data science platform')]");
+    private By dataLoreLocator = By.xpath("//div[@class='_mainSubmenuItem_g69nhg _mainSubmenuItem_xmw1ll _mainSubmenuItem_pqxuo _mainSubmenuItemWithDescription_jme8n' and @data-test='main-submenu-item']");
     private By intellijIdeaLocator = By.xpath("//div[@data-test='main-submenu-item']//a[@href='/idea/']");
     private By watchOverviewLocator = By.xpath("//button[@data-test='button' and contains(text(), 'Watch overview')]");
-    private By videoTitleLocator = By.xpath("//div[@class='ytp-title-text']//a[@href='https://www.youtube.com/watch?v=LFiINOnA2cY']");
+    private By videoTitleLocator = By.xpath("//a[@class='ytp-title-link yt-uix-sessionlink' and text()='Datalore Overview (2024) – The Collaborative Data Science Platform for Teams']");
     private By iFrameLocator = By.xpath("//iframe[@class='wt-youtube-player__player']");
     private By aquaLocator = By.xpath("//div[@data-test='main-submenu-item']//a[@href='/aqua/']");
     private By documentationLocator = By.xpath("//div[@id='js-menu-second-desktop']//a[@href='/help/aqua']");
-    private By overviewLocator = By.xpath("//div[@class='wt-col-6 starting-page-title__tips-column' and contains(text(), 'Get an overview of the JetBrains Aqua IDE')]");
+    private By overviewLocator = By.xpath("//section[@class='wt-section wt-section_bg_white wt-section_theme_light section-starting-page-content__section section-starting-page-content__section--title' and contains(text(), 'Get an overview of the JetBrains Aqua IDE')]");
     private By userInterfaceLocator = By.xpath("//li[@data-toc-scroll='Guided_Tour_Around_the_User_Interface']/a");
     private By pictureLocator = By.xpath("//div[@class='layout layout--container-content layout--columns layout--scroll-element layout--grow'//section[@class='chapter h1-related']//img[@src='https://resources.jetbrains.com/help/img/idea/aqua_locators_evaluator.png']");
     private By cookieValueLocator = By.xpath("//div[@class='jetbrains-cookies-banner-3__text-content']");
@@ -37,6 +37,7 @@ public class Jetbrains {
     @BeforeEach
     void openBrowser() {
         driver = new ChromeDriver(options);
+        driver.manage().window().maximize();
     }
 
     @AfterEach
@@ -47,7 +48,6 @@ public class Jetbrains {
     @Test
     public void cookieTest() {
         driver.get("https://www.jetbrains.com/");
-        driver.manage().window().maximize();
 
         WebElement developerTools = driver.findElement(developerToolLocator);
         developerTools.click();
@@ -59,12 +59,12 @@ public class Jetbrains {
         WebElement cookieValue = new WebDriverWait(driver, Duration.ofSeconds(5))
                 .until(ExpectedConditions.elementToBeClickable(cookieValueLocator));
                 Assertions.assertTrue(cookieValue.isDisplayed());
+                Assertions.assertEquals("Our website uses some cookies and records your IP address for the purposes of accessibility, security, and managing your access to the telecommunication network. You can disable data collection and cookies by changing your browser settings, but it may affect how this website functions. Learn more. With your consent, JetBrains may also use cookies and your IP address to collect individual statistics and provide you with personalized offers and ads subject to the Privacy Policy and the Terms of Use. JetBrains may use third-party services for this purpose. You can adjust or withdraw your consent at any time by visiting the Opt-Out page.", cookieValue.getText());
     }
 
     @Test
     public void pyCharm() {
         driver.get("https://www.jetbrains.com/");
-        driver.manage().window().maximize();
 
         WebElement teamTools = driver.findElement(teamToolsLocator);
         teamTools.click();
@@ -87,7 +87,6 @@ public class Jetbrains {
     @Test
     public void userInterface() {
         driver.get("https://www.jetbrains.com/");
-        driver.manage().window().maximize();
 
         WebElement developerTools = driver.findElement(developerToolLocator);
         developerTools.click();
