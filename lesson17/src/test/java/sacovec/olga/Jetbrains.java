@@ -59,7 +59,8 @@ public class Jetbrains {
         WebElement cookieValue = new WebDriverWait(driver, Duration.ofSeconds(5))
                 .until(ExpectedConditions.elementToBeClickable(cookieValueLocator));
         Assertions.assertTrue(cookieValue.isDisplayed());
-        Assertions.assertEquals("Our website uses some cookies and records your IP address for the purposes of accessibility, security, and managing your access to the telecommunication network. You can disable data collection and cookies by changing your browser settings, but it may affect how this website functions. Learn more. With your consent, JetBrains may also use cookies and your IP address to collect individual statistics and provide you with personalized offers and ads subject to the Privacy Policy and the Terms of Use. JetBrains may use third-party services for this purpose. You can adjust or withdraw your consent at any time by visiting the Opt-Out page.", cookieValue.getText());
+        Assertions.assertEquals("Our website uses some cookies and records your IP address for the purposes of accessibility, security, and managing your access to the telecommunication network. You can disable data collection and cookies by changing your browser settings, but it may affect how this website functions. Learn more.\n" +
+                "With your consent, JetBrains may also use cookies and your IP address to collect individual statistics and provide you with personalized offers and ads subject to the Privacy Policy and the Terms of Use. JetBrains may use third-party services for this purpose. You can adjust or withdraw your consent at any time by visiting the Opt-Out page.", cookieValue.getText());
     }
 
     @Test
