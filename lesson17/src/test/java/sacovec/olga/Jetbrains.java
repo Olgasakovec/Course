@@ -22,9 +22,9 @@ public class Jetbrains {
     private By iFrameLocator = By.xpath("//iframe[@class='wt-youtube-player__player']");
     private By aquaLocator = By.xpath("//div[@data-test='main-submenu-item']//a[@href='/aqua/']");
     private By documentationLocator = By.xpath("//div[@id='js-menu-second-desktop']//a[@href='/help/aqua']");
-    private By overviewLocator = By.xpath("//section[@class='wt-section wt-section_bg_white wt-section_theme_light section-starting-page-content__section section-starting-page-content__section--title' and contains(text(), 'Get an overview of the JetBrains Aqua IDE')]");
+    private By overviewLocator = By.xpath("//section//a[@href='about-aqua-ide.html']");
     private By userInterfaceLocator = By.xpath("//li[@data-toc-scroll='Guided_Tour_Around_the_User_Interface']/a");
-    private By pictureLocator = By.xpath("//div[@class='layout layout--container-content layout--columns layout--scroll-element layout--grow'//section[@class='chapter h1-related']//img[@src='https://resources.jetbrains.com/help/img/idea/aqua_locators_evaluator.png']");
+    private By pictureLocator = By.xpath("//section//img[@src='https://resources.jetbrains.com/help/img/idea/aqua_locators_evaluator.png']");
     private By cookieValueLocator = By.xpath("//div[@class='jetbrains-cookies-banner-3__text-content']");
 
     @BeforeAll
