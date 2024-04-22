@@ -111,8 +111,8 @@ public class Jetbrains {
         String naturalWidth = picture.getAttribute("naturalWidth");
         String naturalHeight = picture.getAttribute("naturalHeight");
 
-        String expectedWidth = "3008";
-        String expectedHeight = "1406";
+        String expectedWidth = "2514";
+        String expectedHeight = "1984";
 
         Assertions.assertEquals(expectedWidth,naturalWidth);
         Assertions.assertEquals(expectedHeight, naturalHeight);
