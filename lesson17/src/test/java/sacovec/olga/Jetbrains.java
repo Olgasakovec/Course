@@ -15,7 +15,7 @@ public class Jetbrains {
 
     private By developerToolLocator = By.xpath("//button[@type='button' and @aria-label='Developer Tools: Open submenu']");
     private By teamToolsLocator = By.xpath("//button[@type='button' and @aria-label='Team Tools: Open submenu']");
-    private By dataLoreLocator = By.xpath("//div[@class='_mainSubmenuItem_g69nhg _mainSubmenuItem_xmw1ll _mainSubmenuItem_pqxuo _mainSubmenuItemWithDescription_jme8n' and @data-test='main-submenu-item']");
+    private By dataLoreLocator = By.xpath("//div[@data-test='main-submenu']//a[@href='/datalore/']//span[@data-test='main-submenu-item-description']");
     private By intellijIdeaLocator = By.xpath("//div[@data-test='main-submenu-item']//a[@href='/idea/']");
     private By watchOverviewLocator = By.xpath("//button[@data-test='button' and contains(text(), 'Watch overview')]");
     private By videoTitleLocator = By.xpath("//a[@class='ytp-title-link yt-uix-sessionlink' and text()='Datalore Overview (2024) – The Collaborative Data Science Platform for Teams']");
@@ -24,7 +24,7 @@ public class Jetbrains {
     private By documentationLocator = By.xpath("//div[@id='js-menu-second-desktop']//a[@href='/help/aqua']");
     private By overviewLocator = By.xpath("//section//a[@href='about-aqua-ide.html']");
     private By userInterfaceLocator = By.xpath("//li[@data-toc-scroll='Guided_Tour_Around_the_User_Interface']/a");
-    private By pictureLocator = By.xpath("//section//img[@src='https://resources.jetbrains.com/help/img/idea/aqua_locators_evaluator.png']");
+    private By pictureLocator = By.xpath("//div[@data-test='article']//img[@src='https://resources.jetbrains.com/help/img/idea/aqua_overview.png']");
     private By cookieValueLocator = By.xpath("//div[@class='jetbrains-cookies-banner-3__text-content']");
 
     @BeforeAll
@@ -58,8 +58,8 @@ public class Jetbrains {
 
         WebElement cookieValue = new WebDriverWait(driver, Duration.ofSeconds(5))
                 .until(ExpectedConditions.elementToBeClickable(cookieValueLocator));
-                Assertions.assertTrue(cookieValue.isDisplayed());
-                Assertions.assertEquals("Our website uses some cookies and records your IP address for the purposes of accessibility, security, and managing your access to the telecommunication network. You can disable data collection and cookies by changing your browser settings, but it may affect how this website functions. Learn more. With your consent, JetBrains may also use cookies and your IP address to collect individual statistics and provide you with personalized offers and ads subject to the Privacy Policy and the Terms of Use. JetBrains may use third-party services for this purpose. You can adjust or withdraw your consent at any time by visiting the Opt-Out page.", cookieValue.getText());
+        Assertions.assertTrue(cookieValue.isDisplayed());
+        Assertions.assertEquals("Our website uses some cookies and records your IP address for the purposes of accessibility, security, and managing your access to the telecommunication network. You can disable data collection and cookies by changing your browser settings, but it may affect how this website functions. Learn more. With your consent, JetBrains may also use cookies and your IP address to collect individual statistics and provide you with personalized offers and ads subject to the Privacy Policy and the Terms of Use. JetBrains may use third-party services for this purpose. You can adjust or withdraw your consent at any time by visiting the Opt-Out page.", cookieValue.getText());
     }
 
     @Test
@@ -98,14 +98,16 @@ public class Jetbrains {
                 .until(ExpectedConditions.elementToBeClickable(documentationLocator));
         documentation.click();
 
-        WebElement overview = new WebDriverWait(driver, Duration.ofSeconds(10))
+        WebElement overview = new WebDriverWait(driver, Duration.ofSeconds(15))
                 .until(ExpectedConditions.elementToBeClickable(overviewLocator));
         overview.click();
 
-        WebElement userInterface = driver.findElement(userInterfaceLocator);
+        WebElement userInterface = new WebDriverWait(driver, Duration.ofSeconds(10))
+                .until(ExpectedConditions.elementToBeClickable(userInterfaceLocator));
         userInterface.click();
 
-        WebElement picture = driver.findElement(pictureLocator);
+        WebElement picture = new WebDriverWait(driver, Duration.ofSeconds(10))
+                .until(ExpectedConditions.visibilityOfElementLocated(pictureLocator));
         String naturalWidth = picture.getAttribute("naturalWidth");
         String naturalHeight = picture.getAttribute("naturalHeight");
 
