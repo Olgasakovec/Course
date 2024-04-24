@@ -12,9 +12,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import java.util.List;
 
-public class TestNGDocumentationStepDefinition {
+public class TestOrgStepDefinition {
+
     private WebDriver driver;
 
     @After
@@ -22,7 +22,7 @@ public class TestNGDocumentationStepDefinition {
         driver.quit();
     }
 
-    @Given("Navigate to the page {string} url")
+    @Given("Navigate to the webpage {string} url")
     public void navigateToThePageUrl(String url){
         WebDriverManager.chromedriver().clearDriverCache().setup();
         ChromeOptions options = new ChromeOptions();
@@ -32,25 +32,20 @@ public class TestNGDocumentationStepDefinition {
         driver.get(url);
     }
 
-    @When("Maximize window")
-    public void MaximizeWindow(){
+    @When("Window maximize")
+    public void WindowMaximize(){
         driver.manage().window().maximize();
     }
 
-    @And("Click to the link '3. TestNG Documentation'")
-    public void clickToTheLink (){
-        driver.findElement(By.xpath("//div[@id='toc']//a[@href='#_testng_documentation']")).click();
+    @And("Click to the link in the left menu '13. The TestNG TextBook: Next Generation Java Testing'")
+    public void clickToTheLinkInTheLeft (){
+        driver.findElement(By.xpath("//div[@id='tocbot']//a[@href='#_the_testng_textbook_next_generation_java_testing']")).click();
     }
 
-    @And("Navigate to the menu '3.2. Annotations'")
-    public void navigateToTheMenu (){
-        driver.findElement(By.xpath("//div[@id='tocbot']//a[@href='#_annotations']")).click();
-    }
-
-    @Then("Check that table consist 3 columns")
-    public void checkThatTableConsistThreeColumns (){
-        List<WebElement> colTags = driver.findElements(By.xpath("//div[@class='sect2']//table[@class='tableblock frame-all grid-all stretch']/colgroup/col"));
-        int numberOfColTags = colTags.size();
-        Assertions.assertEquals(3, numberOfColTags);
+    @Then("Check that image format is .jpg")
+    public void checkThatImageFormatIsJpg(){
+        WebElement image = driver.findElement(By.xpath("//div[@class='imageblock']//img[@src='pics/book-cover.jpg']"));
+        String imageSource = image.getAttribute("src");
+        Assertions.assertTrue(imageSource.endsWith(".jpg"));
     }
 }

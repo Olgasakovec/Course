@@ -12,11 +12,13 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 public class UserGuideStepDefinition {
+    private WebDriver driver;
+
     @After
-    public void closeDriver(){
+    public void closeDrive() {
         driver.quit();
     }
-    private WebDriver driver;
+
     @Given("Open browser and maximize window")
     public void openBrowserAndMaximizeWindow(){
         WebDriverManager.chromedriver().clearDriverCache().setup();
@@ -35,6 +37,5 @@ public class UserGuideStepDefinition {
     public void verifyThatUserGuideButtonTextIsUserGuide(String expectedText){
         String actualText = driver.findElement(By.xpath("//div[@id='toc']//a[@href='#_testng_documentation']")).getText();
         Assertions.assertEquals(expectedText, actualText);
-
     }
 }
