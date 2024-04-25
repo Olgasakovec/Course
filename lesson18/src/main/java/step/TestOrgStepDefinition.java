@@ -17,13 +17,8 @@ public class TestOrgStepDefinition {
 
     private WebDriver driver;
 
-    @After
-    public void closeDriver(){
-        driver.quit();
-    }
-
     @Given("Navigate to the webpage {string} url")
-    public void navigateToThePageUrl(String url){
+    public void navigateToTheWebpageUrl(String url) {
         WebDriverManager.chromedriver().clearDriverCache().setup();
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--remote-allow-origins=*");
@@ -33,17 +28,17 @@ public class TestOrgStepDefinition {
     }
 
     @When("Window maximize")
-    public void WindowMaximize(){
+    public void windowToMaximize() {
         driver.manage().window().maximize();
     }
 
     @And("Click to the link in the left menu '13. The TestNG TextBook: Next Generation Java Testing'")
-    public void clickToTheLinkInTheLeft (){
+    public void clickToTheLinkInTheLeft() {
         driver.findElement(By.xpath("//div[@id='tocbot']//a[@href='#_the_testng_textbook_next_generation_java_testing']")).click();
     }
 
     @Then("Check that image format is .jpg")
-    public void checkThatImageFormatIsJpg(){
+    public void checkThatImageFormatIsJpg() {
         WebElement image = driver.findElement(By.xpath("//div[@class='imageblock']//img[@src='pics/book-cover.jpg']"));
         String imageSource = image.getAttribute("src");
         Assertions.assertTrue(imageSource.endsWith(".jpg"));

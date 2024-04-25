@@ -15,12 +15,14 @@ public class UserGuideStepDefinition {
     private WebDriver driver;
 
     @After
-    public void closeDrive() {
-        driver.quit();
+    public void isCloseDrive() {
+        if (driver != null) {
+            driver.quit();
+        }
     }
 
     @Given("Open browser and maximize window")
-    public void openBrowserAndMaximizeWindow(){
+    public void openBrowserAndMaximizeWindow() {
         WebDriverManager.chromedriver().clearDriverCache().setup();
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--remote-allow-origins=*");
@@ -28,14 +30,15 @@ public class UserGuideStepDefinition {
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
     }
+
     @When("Navigate to the {string} url")
-    public void navigateToUrl(String url){
-       driver.get(url);
+    public void navigateToUrl(String url) {
+        driver.get(url);
     }
 
     @Then("Verify that User Guide button text is {string}")
-    public void verifyThatUserGuideButtonTextIsUserGuide(String expectedText){
-        String actualText = driver.findElement(By.xpath("//div[@id='toc']//a[@href='#_testng_documentation']")).getText();
-        Assertions.assertEquals(expectedText, actualText);
+    public void verifyThatUserGuideButtonTextIsUserGuide(String expectedText) {
+        String actualText = driver.findElement(By.xpath("//div[@class='jumbotron']//a[@href='/junit5/docs/current/user-guide']")).getText();
+        Assertions.assertEquals( expectedText, actualText);
     }
 }
