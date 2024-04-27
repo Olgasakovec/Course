@@ -1,6 +1,5 @@
 package step;
 
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
@@ -8,11 +7,6 @@ import org.openqa.selenium.By;
 import static step.CommonStep.getDriver;
 
 public class UserGuideStepDefinition {
-
-    @Given("Navigate to the {string} url")
-    public void navigateToUrl(String url) {
-        getDriver().get(url);
-    }
 
     @Then("Verify that User Guide button text is {string}")
     public void verifyThatUserGuideButtonTextIsUserGuide(String expectedText) {

@@ -1,7 +1,6 @@
 package step;
 
 import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
@@ -9,11 +8,6 @@ import org.openqa.selenium.WebElement;
 import static step.CommonStep.getDriver;
 
 public class TestOrgStepDefinition {
-
-    @Given("Navigate to the webpage {string} url")
-    public void navigateToTheWebpageUrl(String url) {
-       getDriver().get(url);
-    }
 
     @And("Click to the link in the left menu '13. The TestNG TextBook: Next Generation Java Testing'")
     public void clickToTheLinkInTheLeft() {

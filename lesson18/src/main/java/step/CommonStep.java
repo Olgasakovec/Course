@@ -2,6 +2,7 @@ package step;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
+import io.cucumber.java.en.Given;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -22,6 +23,10 @@ public class CommonStep {
 
         driver.set(new ChromeDriver(options));
         driver.get().manage().window().maximize();
+    }
+    @Given("Navigate to the {string} url")
+    public void navigateToUrl(String url) {
+        getDriver().get(url);
     }
 
     @After

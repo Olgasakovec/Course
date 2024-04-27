@@ -1,7 +1,6 @@
 package step;
 
 import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.jupiter.api.Assertions;
@@ -11,11 +10,6 @@ import java.util.List;
 import static step.CommonStep.getDriver;
 
 public class TestNGDocumentationStepDefinition {
-
-    @Given("Navigate to the page {string} url")
-    public void navigateToThePageUrl(String url) {
-        getDriver().get(url);
-    }
 
     @When("Click to the link '3. TestNG Documentation'")
     public void clickToTheLink() {
