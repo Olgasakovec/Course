@@ -9,12 +9,15 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class JetbrainsThirdTaskStepDefinition {
+public class PyCharmStepDefinition {
+
+    public PyCharmStepDefinition() {
+    }
 
     @And("Choose 'PyCharm' and click")
     public void choosePyCharmAndClick() {
         WebElement pyCharmClick = BaseTest.getDriver().findElement(By.xpath("//a[@href='/pycharm']"));
-        WebDriverWait wait = new WebDriverWait(BaseTest.getDriver(), Duration.ofSeconds(10L));
+        WebDriverWait wait = new WebDriverWait(BaseTest.getDriver(), Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(pyCharmClick));
         pyCharmClick.click();
     }
@@ -22,7 +25,7 @@ public class JetbrainsThirdTaskStepDefinition {
     @Then("Verify that 'Download' tittle is displayed")
     public void verifyThatGettingStartedWithWritersideTittle() {
         WebElement downloadButton = BaseTest.getDriver().findElement(By.xpath("//a[@data-test='button' and @href='/pycharm/download/' and @type='button')]"));
-        WebDriverWait wait = new WebDriverWait(BaseTest.getDriver(), Duration.ofSeconds(10L));
+        WebDriverWait wait = new WebDriverWait(BaseTest.getDriver(), Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(downloadButton));
         if (downloadButton.isEnabled()) {
             System.out.println("The 'Download' button is enabled. Proceeding to click.");
