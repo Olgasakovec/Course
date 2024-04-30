@@ -29,8 +29,8 @@
         <module>lesson15</module>
         <module>test3</module>
         <module>lesson17</module>
-        <module>lesson16</module>
         <module>lesson18</module>
+        <module>selenida</module>
 
     </modules>
 
@@ -44,7 +44,7 @@
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
-            <version>4.8.1</version>
+            <version>4.13.0</version>
         </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
