@@ -2,7 +2,7 @@
 <suite name="User registration">
     <test name="Regression tests">
         <classes>
-            <class name="sacovec.olga.Task4"/>
+            <class name="step.Task4"/>
         </classes>
     </test>
 </suite>

@@ -48,7 +48,7 @@ public class BaseTest {
     @And("Choose 'Writerside' and click")
     public void chooseWritersideAndClick() {
         WebDriverWait wait = new WebDriverWait(BaseTest.getDriver(), Duration.ofSeconds(10));
-        WebElement writersideMenuItem = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@data-test='main-submenu']//a[@href=/writerside/']")));
+        WebElement writersideMenuItem = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@data-test='main-submenu']//a[@href='/writerside/']")));
         writersideMenuItem.click();
     }
 

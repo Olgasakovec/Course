@@ -1,4 +1,4 @@
-package sacovec.olga;
+package step;
 
 import org.junit.jupiter.api.Assertions;
 import org.testng.annotations.DataProvider;

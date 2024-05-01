@@ -38,7 +38,7 @@
                 <version>3.0.0-M4</version>
                 <configuration>
                     <suiteXmlFiles>
-                        <suiteXmlFile>ReportRunner.xml</suiteXmlFile>
+                        <suiteXmlFile>ReportLesson.xml</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
             </plugin>

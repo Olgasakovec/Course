@@ -25,7 +25,9 @@ public class WriteSideStepDefinition {
     @Then("Verify that 'Getting Started With Writerside' tittle is displayed")
     public void verifyThatGettingStartedWithWritersideTittle() {
         WebElement linkElement = BaseTest.getDriver().findElement(By.xpath("//a[contains(text(), 'Getting Started With Writerside')]"));
-        Assertions.assertEquals("Getting Started With Writerside", linkElement);
+        String actualText = linkElement.getText();
+        String expectedText = "Getting Started With Writerside";
+        Assertions.assertEquals(expectedText, actualText);
     }
 }
 
