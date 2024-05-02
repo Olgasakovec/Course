@@ -17,17 +17,17 @@ public class WriteSideStepDefinition {
     @And("Turn on the 'Play' button")
     public void turnOnThePlayButton() {
         WebElement playButton = BaseTest.getDriver().findElement(By.xpath("//button[@data-test='youtube-player-button']"));
-        WebDriverWait wait = new WebDriverWait(BaseTest.getDriver(), Duration.ofSeconds(10L));
+        WebDriverWait wait = new WebDriverWait(BaseTest.getDriver(), Duration.ofSeconds(20));
         wait.until(ExpectedConditions.elementToBeClickable(playButton));
         playButton.click();
     }
 
     @Then("Verify that 'Getting Started With Writerside' tittle is displayed")
     public void verifyThatGettingStartedWithWritersideTittle() {
-        WebElement linkElement = BaseTest.getDriver().findElement(By.xpath("//a[contains(text(), 'Getting Started With Writerside')]"));
-        String actualText = linkElement.getText();
-        String expectedText = "Getting Started With Writerside";
-        Assertions.assertEquals(expectedText, actualText);
+        WebDriverWait wait = new WebDriverWait(BaseTest.getDriver(), Duration.ofSeconds(10));
+        By iframeElementLocator = By.xpath("//div[@class='wt-youtube-player wt-youtube-player_show-video']//iframe[@class='wt-youtube-player__player' and @title='Getting Started With Writerside']");
+        boolean result = wait.until(ExpectedConditions.textToBePresentInElementLocated(iframeElementLocator, "Getting Started With Writerside"));
+        Assertions.assertTrue(result, "Expected text is not present in the element");
     }
 }
 

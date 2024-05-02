@@ -15,15 +15,15 @@ public class PyCharmStepDefinition {
 
     @And("Choose 'PyCharm' and click")
     public void choosePyCharmAndClick() {
-        WebElement pyCharmClick = BaseTest.getDriver().findElement(By.xpath("//a[@href='/pycharm']"));
-        WebDriverWait wait = new WebDriverWait(BaseTest.getDriver(), Duration.ofSeconds(10));
+        WebElement pyCharmClick = BaseTest.getDriver().findElement(By.xpath("//div[@data-test='main-submenu']//a[@href='/pycharm/']"));
+        WebDriverWait wait = new WebDriverWait(BaseTest.getDriver(), Duration.ofSeconds(20));
         wait.until(ExpectedConditions.elementToBeClickable(pyCharmClick));
         pyCharmClick.click();
     }
 
     @Then("Verify that 'Download' tittle is displayed")
     public void verifyThatGettingStartedWithWritersideTittle() {
-        WebElement downloadButton = BaseTest.getDriver().findElement(By.xpath("//a[@data-test='button' and @href='/pycharm/download/' and @type='button')]"));
+        WebElement downloadButton = BaseTest.getDriver().findElement(By.xpath("//a[@data-test='button' and @href='/pycharm/download/' and @type='button']"));
         WebDriverWait wait = new WebDriverWait(BaseTest.getDriver(), Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(downloadButton));
         if (downloadButton.isEnabled()) {
