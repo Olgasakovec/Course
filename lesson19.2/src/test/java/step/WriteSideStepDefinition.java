@@ -24,10 +24,15 @@ public class WriteSideStepDefinition {
 
     @Then("Verify that 'Getting Started With Writerside' tittle is displayed")
     public void verifyThatGettingStartedWithWritersideTittle() {
-        WebDriverWait wait = new WebDriverWait(BaseTest.getDriver(), Duration.ofSeconds(10));
-        By iframeElementLocator = By.xpath("//div[@class='wt-youtube-player wt-youtube-player_show-video']//iframe[@class='wt-youtube-player__player' and @title='Getting Started With Writerside']");
-        boolean result = wait.until(ExpectedConditions.textToBePresentInElementLocated(iframeElementLocator, "Getting Started With Writerside"));
-        Assertions.assertTrue(result, "Expected text is not present in the element");
+        By iFrameLocator = By.xpath("//iframe[@class='wt-youtube-player__player']");
+        WebElement iFrame = new WebDriverWait(BaseTest.getDriver(), Duration.ofSeconds(10))
+                .until(ExpectedConditions.visibilityOfElementLocated(iFrameLocator));
+        BaseTest.getDriver().switchTo().frame(iFrame);
+
+        By videoTitleLocator = By.xpath("//a[@class='ytp-title-link yt-uix-sessionlink' and text()='Getting Started With Writerside']");
+        WebElement videoTitle = new WebDriverWait(BaseTest.getDriver(), Duration.ofSeconds(15))
+                .until(ExpectedConditions.elementToBeClickable(videoTitleLocator));
+        Assertions.assertEquals("Getting Started With Writerside", videoTitle.getText());
     }
 }
 
