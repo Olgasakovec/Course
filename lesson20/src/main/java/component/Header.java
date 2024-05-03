@@ -14,7 +14,7 @@ public class Header {
         this.driver = driver;
     }
 
-    public void clickDeveloperTools(){
+    public void developerToolsClick(){
         driver.findElement(developerToolsLocator).click();
     }
 

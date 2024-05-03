@@ -6,11 +6,11 @@ import org.openqa.selenium.WebDriver;
 
 public class JetbrainsPage {
 
-    private WebDriver driver;
-
     public JetbrainsPage(WebDriver driver) {
         this.driver = driver;
     }
+
+    private WebDriver driver;
 
     public Header getHeader() {
         return new Header(driver);
