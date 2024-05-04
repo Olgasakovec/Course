@@ -1,6 +1,5 @@
 package page;
 
-import component.DropDown;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -21,7 +20,4 @@ public class MainPage {
         driver.findElement(developerToolsLocator).click();
         return new JetbrainsPage(driver);
     }
-
-
-
 }

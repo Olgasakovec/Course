@@ -1,6 +1,7 @@
 package page;
 
-import component.Header;
+import component.DropDown;
+import component.Tittle;
 import org.openqa.selenium.WebDriver;
 
 
@@ -12,7 +13,11 @@ public class JetbrainsPage {
 
     private WebDriver driver;
 
-    public Header getHeader() {
-        return new Header(driver);
+    public DropDown getDropDown() {
+        return new DropDown(driver);
+    }
+
+    public Tittle getTittle() {
+        return new Tittle(driver);
     }
 }
