@@ -2,26 +2,25 @@ package component;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import page.JetbrainsPage;
-import page.PhpStorm;
 
 public class DropDown {
     private WebDriver driver;
 
     private By riderLocator = By.xpath("//div[@data-test='main-submenu']//a[@href='/rider/']");
-private By phpStormLocator = By.xpath("//div[@data-test='main-submenu']//a[@href='/phpstorm/']");
+    private By jetBrainsAiLocator = By.xpath("//div[@data-test='main-submenu']//a[@href='/ai/']");
 
     public DropDown(WebDriver driver){
     this.driver = driver;
     }
 
-    public JetbrainsPage clickRider() {
+    public DropDown clickMenuRider() {
         driver.findElement(riderLocator).click();
-        return new JetbrainsPage(driver);
+        return new DropDown(driver);
     }
 
-    public PhpStorm clickPhpStorm() {
-        driver.findElement(phpStormLocator).click();
-        return  new PhpStorm(driver);
+    public DropDown clickJetBrainsAi() {
+        driver.findElement(jetBrainsAiLocator).click();
+        return new DropDown(driver);
     }
+
 }

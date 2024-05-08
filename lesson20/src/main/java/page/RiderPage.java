@@ -4,9 +4,9 @@ import component.Tittle;
 import org.openqa.selenium.WebDriver;
 
 
-public class RiderIdPage {
+public class RiderPage {
     private WebDriver driver;
-    public RiderIdPage(WebDriver driver) {
+    public RiderPage(WebDriver driver) {
         this.driver = driver;
     }
 

@@ -2,7 +2,7 @@ package component;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import page.RiderPage;
 
 public class Tittle {
     private WebDriver driver;
@@ -13,9 +13,8 @@ public class Tittle {
         this.driver = driver;
     }
 
-    public boolean linkTextCorrect() {
-        WebElement linkElement = driver.findElement(linkTextLocator);
-        String linkText = linkElement.getText();
-        return linkText.equals("part of dotUltimate");
+    public RiderPage checkLinkTextCorrect() {
+       driver.findElement(linkTextLocator).getText();
+        return new RiderPage(driver);
     }
 }
