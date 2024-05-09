@@ -6,28 +6,38 @@ public class TestJetbrains extends BaseTest{
 
     @Test
     void checkThatLinkHaveText() {
-        String linkTextCorrect = new MainPage(getDriver())
+        String actualText = new MainPage(getDriver())
                 .navigateTo("https://www.jetbrains.com/")
+                .getHeader()
                 .clickDeveloperTools()
-                .getDropDown()
                 .clickMenuRider()
-                .getTittle()
-                .checkLinkTextCorrect();
-        Assertions.assertEquals( linkTextCorrect, "part of dotUltimate");
+                .getLinkText();
+                 String expectedText = "part of dotUltimate";
+        Assertions.assertEquals( expectedText, actualText);
     }
 
     @Test
     void checkVideoTitle() {
-        String title = new MainPage(getDriver())
+        String actualTitle = new MainPage(getDriver())
                 .navigateTo("https://www.jetbrains.com/")
+                .getHeader()
                 .clickStore()
-                .getDropDown()
                 .clickJetBrainsAi()
-                .getButton()
                 .clickWatchVideo()
-                .getVideo()
-                .iFrame()
                 .checkVideoTitle();
+        String expectedTitle = "JetBrains AI Assistant";
+        Assertions.assertEquals(expectedTitle, actualTitle);
+    }
+
+    @Test
+    void checkButtonIsActive() {
+        boolean isButtonEnabled = new MainPage(getDriver())
+                .navigateTo("https://www.jetbrains.com/")
+                .getHeader()
+                .clickDeveloperTools()
+                .clickMenuFleet()
+                .isDownloadButtonEnabled();
+        Assertions.assertTrue(isButtonEnabled);
     }
 }
 
