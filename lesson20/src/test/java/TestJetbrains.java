@@ -24,7 +24,7 @@ public class TestJetbrains extends BaseTest{
                 .clickStore()
                 .clickJetBrainsAi()
                 .clickWatchVideo()
-                .checkVideoTitle();
+                .getVideoTitle();
         String expectedTitle = "JetBrains AI Assistant";
         Assertions.assertEquals(expectedTitle, actualTitle);
     }

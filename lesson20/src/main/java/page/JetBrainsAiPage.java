@@ -3,6 +3,10 @@ package page;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class JetBrainsAiPage {
 
@@ -16,10 +20,14 @@ public class JetBrainsAiPage {
         this.driver = driver;
     }
 
-    public String checkVideoTitle() {
-        WebElement iframeElement = driver.findElement(iFrameLocator);
+    public String getVideoTitle() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+        WebElement iframeElement = wait.until(ExpectedConditions.visibilityOfElementLocated(iFrameLocator));
         driver.switchTo().frame(iframeElement);
-        String videoTitle = driver.findElement(videoTitleLocator).getText();
+
+        WebElement videoTitleElement = wait.until(ExpectedConditions.visibilityOfElementLocated(videoTitleLocator));
+        String videoTitle = videoTitleElement.getText();
+
         driver.switchTo().defaultContent();
         return videoTitle;
     }

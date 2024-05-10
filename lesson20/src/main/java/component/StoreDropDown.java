@@ -8,7 +8,7 @@ import page.JetBrainsAiPage;
 public class StoreDropDown {
     private WebDriver driver;
 
-    private By jetBrainsAiLocator = By.xpath("//div[@data-test='main-submenu']//div[@class='wt-offset-top-12']//a[@href='/ai/']");
+    private By jetBrainsAiLocator = By.xpath("//div[@data-test='main-menu-item' and @data-test-marker='Store']//span[contains(text(), 'JetBrains AI')]");
 
 
     public StoreDropDown(WebDriver driver) {
