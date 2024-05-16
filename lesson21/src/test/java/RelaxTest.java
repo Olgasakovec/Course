@@ -1,7 +1,7 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import page.MainPage;
-import page.PhotoOtchetPage;
+import page.PhotoOtchetPage;;
 
 public class RelaxTest extends BaseTest {
 
@@ -11,9 +11,9 @@ public class RelaxTest extends BaseTest {
                 .navigateTo("https://www.relax.by/")
                 .getNavigationMenu()
                 .clickAfishaKino()
-                .clickSpectakliToMuziclPage()
-                .clickMuzicl()
-                .checkTitleMuziclVMinske();
+                .clickSpectakliPage()
+                .selectCategory("#musical")
+                .getTitleElement().getText();
         String expectedTitle = "Мюзикл в Минске";
         Assertions.assertEquals(actualTitle, expectedTitle);
     }
@@ -24,9 +24,9 @@ public class RelaxTest extends BaseTest {
                 .navigateTo("https://www.relax.by/")
                 .getNavigationMenu()
                 .clickAfishaKino()
-                .clickSpectakliToBalletPage()
-                .clickBallet()
-                .checkTitleBalletVMinske();
+                .clickSpectakliPage()
+                .selectCategory("#balet")
+                .getTitleElement().getText();
         String expectedTitle = "Балет в Минске";
         Assertions.assertEquals(actualTitle, expectedTitle);
     }
@@ -37,9 +37,9 @@ public class RelaxTest extends BaseTest {
                 .navigateTo("https://www.relax.by/")
                 .getNavigationMenu()
                 .clickAfishaKino()
-                .clickSpectakliToComeediPage()
-                .clickComedia()
-                .checkTitleComediaVMinske();
+                .clickSpectakliPage()
+                .selectCategory("#comedia")
+                .getTitleElement().getText();
         String expectedTitle = "Спектакль-комедия в Минске";
         Assertions.assertEquals(actualTitle, expectedTitle);
     }

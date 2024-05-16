@@ -2,6 +2,9 @@ package page;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 public class SpectakliPage {
     private WebDriver driver;
@@ -10,20 +13,23 @@ public class SpectakliPage {
 
     public SpectakliPage(WebDriver driver) {
         this.driver = driver;
+        PageFactory.initElements(driver, this);
     }
 
-    public MuziclPage clickSpectakliToMuziclPage() {
+    public SpectakliPage clickSpectakliPage() {
         driver.findElement(spectakliLocator).click();
-        return new MuziclPage(driver);
+        return new SpectakliPage(driver);
+    }
+    public SpectakliPage selectCategory(String category) {
+        String categoryLocator = String.format("//li[@class='afisha-links__item js-afisha-links-item']/a[@href='https://afisha.relax.by/theatre/minsk/%s/']", category);
+        driver.findElement(By.xpath(categoryLocator)).click();
+        return new SpectakliPage(driver);
     }
 
-    public BalletPage clickSpectakliToBalletPage() {
-        driver.findElement(spectakliLocator).click();
-        return new BalletPage(driver);
-    }
+    @FindBy(xpath = "//div[@id='searchWrap']//h1")
+    private WebElement title;
 
-    public ComediaPage clickSpectakliToComeediPage() {
-        driver.findElement(spectakliLocator).click();
-        return new ComediaPage(driver);
+    public WebElement getTitleElement() {
+        return title;
     }
 }

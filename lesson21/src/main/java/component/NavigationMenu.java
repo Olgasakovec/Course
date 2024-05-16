@@ -2,7 +2,6 @@ package component;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import page.AfishaKinoPage;
 import page.PhotoOtchetPage;
 import page.SpectakliPage;
 
