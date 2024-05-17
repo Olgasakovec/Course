@@ -1,3 +1,4 @@
+import component.Button;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -36,20 +37,16 @@ public class RelaxTest extends BaseTest {
 
     @Test
     void checkButtonAndTextVsePhotoOtcheti() {
-        String buttonText = new MainPage(getDriver())
+        Button photoOtchetButton = new MainPage(getDriver())
                 .navigateTo("https://www.relax.by/")
                 .getNavigationMenu()
                 .clickPhotoOtchet()
-                .getPhotoOtchetButton()
-                .getText();
+                .getPhotoOtchetButton();
 
-        Assertions.assertTrue(new MainPage(getDriver())
-                .navigateTo("https://www.relax.by/")
-                .getNavigationMenu()
-                .clickPhotoOtchet()
-                .getPhotoOtchetButton()
-                .isDisplayed());
-
+        String buttonText = photoOtchetButton.getText();
         Assertions.assertEquals("Все фотоотчеты", buttonText);
+
+        boolean isDisplayed = photoOtchetButton.isDisplayed();
+        Assertions.assertTrue(isDisplayed);
     }
 }

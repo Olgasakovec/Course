@@ -4,7 +4,7 @@ import org.openqa.selenium.WebDriver;
 
 public interface Button extends Element {
 
-    void click();
+    String getText();
 
-    void hover(WebDriver driver);
+    Boolean isDisplayed();
 }

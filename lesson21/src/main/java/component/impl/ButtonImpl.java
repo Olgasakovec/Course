@@ -1,9 +1,7 @@
 package component.impl;
-
 import component.Button;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
+
 
 public class ButtonImpl extends AbstractElement implements Button {
 
@@ -12,12 +10,12 @@ public class ButtonImpl extends AbstractElement implements Button {
     }
 
     @Override
-    public void click() {
-
+    public String getText() {
+        return wrapperElement.getText();
     }
 
     @Override
-    public void hover(WebDriver driver) {
-        new Actions(driver).moveToElement(wrapperElement).perform();
+    public Boolean isDisplayed() {
+        return wrapperElement.isDisplayed();
     }
 }
