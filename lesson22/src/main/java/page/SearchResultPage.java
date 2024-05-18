@@ -4,6 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import java.util.List;
+
 public class SearchResultPage {
 
     private WebDriver driver;
@@ -20,6 +22,10 @@ public class SearchResultPage {
             System.out.println("Компания " + companyName + " не найдена.");
         }
         return this;
+    }
+
+    public List<WebElement> getCompanyRows() {
+        return driver.findElements(By.tagName("tr"));
     }
 
     public SearchResultPage isQuantityMoreThanZero(String companyName) {

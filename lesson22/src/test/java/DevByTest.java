@@ -1,20 +1,25 @@
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
 import page.MainPage;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.testng.annotations.DataProvider;
 
+import java.util.stream.Stream;
+
 public class DevByTest extends BaseTest {
 
-    @DataProvider(name="query")
-    public Object[][] query() {
-        return new Object[][] {
-                {"bit", "Fitbit"},
-                {"solution", "BIMSOLUTIONS"}
-        };
+    public static Stream<Arguments> queryData() {
+        return Stream.of(
+                Arguments.of("bit", "Fitbit"),
+                Arguments.of("solution", "BIMSOLUTIONS")
+        );
     }
 
-    @Test(dataProvider = "query")
+    @ParameterizedTest(name = "Check that Company is found")
+    @MethodSource("queryData")
     void testCompanySearch(String query, String expectedCompany) {
         new MainPage(getDriver())
                 .navigateTo("https://devby.io/")
