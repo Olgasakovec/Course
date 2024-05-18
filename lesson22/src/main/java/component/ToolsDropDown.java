@@ -1,7 +1,7 @@
 package component;
 
-import Page.CompanyPage;
-import Page.OProektePage;
+import page.CompanyPage;
+import page.OProektePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;

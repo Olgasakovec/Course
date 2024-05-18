@@ -1,37 +1,31 @@
-import Page.MainPage;
-import Page.SearchResultPage;
+import page.MainPage;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
+import org.testng.annotations.DataProvider;
 
 public class DevByTest extends BaseTest {
 
-    @Test
-    void testFitbit() {
-        new MainPage(getDriver())
-                .navigateTo("https://devby.io/")
-                .getNavBar()
-                .clickMenu()
-                .clickCompany()
-                .inputCompany("bit")
-                .isCompanyFound("Fitbit")
-                .isQuantityMoreThanZero("Fitbit")
-                .aboveQuantityMoreThanZero("Fitbit")
-                .belowQuantityMoreThanZero("Fitbit");
+    @DataProvider(name="query")
+    public Object[][] query() {
+        return new Object[][] {
+                {"bit", "Fitbit"},
+                {"solution", "BIMSOLUTIONS"}
+        };
     }
 
-    @Test
-    void testBimSolutions() {
+    @Test(dataProvider = "query")
+    void testCompanySearch(String query, String expectedCompany) {
         new MainPage(getDriver())
                 .navigateTo("https://devby.io/")
                 .getNavBar()
                 .clickMenu()
                 .clickCompany()
-                .inputCompany("solution")
-                .isCompanyFound("BIMSOLUTIONS")
-                .isQuantityMoreThanZero("BIMSOLUTIONS")
-                .aboveQuantityMoreThanZero("BIMSOLUTIONS")
-                .belowQuantityMoreThanZero("BIMSOLUTIONS");
+                .inputCompany(query)
+                .isCompanyFound(expectedCompany)
+                .isQuantityMoreThanZero(expectedCompany)
+                .aboveQuantityMoreThanZero(expectedCompany)
+                .belowQuantityMoreThanZero(expectedCompany);
     }
 
     @Test
@@ -41,7 +35,7 @@ public class DevByTest extends BaseTest {
                 .getNavBar()
                 .clickMenu()
                 .clickOProekte()
-                .checkTitleOProekte();
+                .getTitleOProekte();
         String expectedTitle = "О проекте";
         Assertions.assertEquals(actualTitle, expectedTitle);
     }

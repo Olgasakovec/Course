@@ -1,4 +1,4 @@
-package Page;
+package page;
 
 import component.NavBar;
 import org.openqa.selenium.WebDriver;

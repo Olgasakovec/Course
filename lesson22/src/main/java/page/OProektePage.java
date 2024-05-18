@@ -1,4 +1,4 @@
-package Page;
+package page;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -12,8 +12,7 @@ public class OProektePage {
         this.driver = driver;
     }
 
-    public String checkTitleOProekte() {
-        String title = driver.findElement(oProekteTitleLocator).getText();
-        return title;
+    public String getTitleOProekte() {
+       return driver.findElement(oProekteTitleLocator).getText();
     }
 }
