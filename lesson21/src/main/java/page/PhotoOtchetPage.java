@@ -1,12 +1,12 @@
 package page;
 
 import component.Button;
+import component.util.ExtendedFieldDecorator;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.pagefactory.DefaultElementLocatorFactory;
 
 public class PhotoOtchetPage {
     private WebDriver driver;
@@ -15,7 +15,7 @@ public class PhotoOtchetPage {
 
     public PhotoOtchetPage(WebDriver driver) {
         this.driver = driver;
-        PageFactory.initElements(new DefaultElementLocatorFactory(driver), this);
+        PageFactory.initElements(new ExtendedFieldDecorator(driver), this);
      }
 
     public String getImageSource() {
