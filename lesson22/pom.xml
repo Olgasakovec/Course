@@ -25,12 +25,17 @@
             <id>ru</id>
             <properties>
                 <lang>rus</lang>
+                <locale>Russia</locale>
             </properties>
         </profile>
         <profile>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
             <id>by</id>
             <properties>
                 <lang>by</lang>
+                <locale>Belarus</locale>
             </properties>
         </profile>
     </profiles>
