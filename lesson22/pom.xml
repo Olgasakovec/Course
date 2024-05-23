@@ -14,15 +14,10 @@
             <version>7.0.0</version>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>org.junit.platform</groupId>
-            <artifactId>junit-platform-suite</artifactId>
-            <version>1.9.2</version>
-        </dependency>
     </dependencies>
     <profiles>
         <profile>
-            <id>ru</id>
+            <id>rus</id>
             <properties>
                 <lang>rus</lang>
                 <locale>Russia</locale>
@@ -32,9 +27,9 @@
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
-            <id>by</id>
+            <id>bel</id>
             <properties>
-                <lang>by</lang>
+                <lang>bel</lang>
                 <locale>Belarus</locale>
             </properties>
         </profile>
