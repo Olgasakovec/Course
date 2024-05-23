@@ -66,10 +66,11 @@ public class DevByTest extends BaseTest {
 
     @Test
     void changeLangTest() {
-        switchLang();
+        switchLang("https://devby.io/");
     }
 
-    void switchLang() {
+    void switchLang(String url) {
+        getDriver().get(url);
         String lang = System.getProperty("lang");
         if (lang.equals("rus")) {
             WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));

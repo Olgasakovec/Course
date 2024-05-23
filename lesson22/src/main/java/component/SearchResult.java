@@ -58,13 +58,12 @@ public class SearchResult {
 
     public int findCompanyRowIndex(String expectedCompany) {
         List<String> companyNames = getCompanyNames();
-        int index = 0;
         int targetIndex = -1;
         for (String companyName : companyNames) {
-            index++;
-            System.out.println("Company: " + companyName + " найденный индекс " + index);
+            targetIndex++;
+            System.out.println("Company: " + companyName + " найденный индекс " + targetIndex);
             if (companyName.equals(expectedCompany)) {
-                targetIndex = index;
+                targetIndex = targetIndex;
                 break;
             }
         }
