@@ -31,11 +31,12 @@
         <module>lesson17</module>
         <module>lesson16</module>
         <module>lesson18</module>
-        <module>lesson20</module>
         <module>selenida</module>
         <module>lesson19.2</module>
         <module>lesson23</module>
-
+        <module>lesson20</module>
+        <module>lesson21</module>
+        <module>lesson22</module>
     </modules>
 
     <properties>
