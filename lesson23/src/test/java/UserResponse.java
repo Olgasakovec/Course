@@ -1,4 +1,9 @@
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.gson.Gson;
+
 public class UserResponse {
+
     private int code;
     private String type;
     private String message;
@@ -26,8 +31,15 @@ public class UserResponse {
         return contentType;
     }
 
-    public UserResponse as(Class<UserResponse> userResponseClass) {
-        return this;
+    public <T> T as(Class<T> responseClass) {
+        try {
+            ObjectMapper mapper = new ObjectMapper();
+            String json = mapper.writeValueAsString(this);
+            return mapper.readValue(json, responseClass);
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 }
 
