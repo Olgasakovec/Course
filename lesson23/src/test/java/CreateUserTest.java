@@ -3,6 +3,8 @@ import io.restassured.filter.log.RequestLoggingFilter;
 import io.restassured.filter.log.ResponseLoggingFilter;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
+import model.User;
+import model.UserResponse;
 import org.apache.http.HttpStatus;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
@@ -10,9 +12,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
-
 import java.util.stream.Stream;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class CreateUserTest {
@@ -21,7 +21,6 @@ public class CreateUserTest {
     static void prepareLogs() {
         RestAssured.filters(new RequestLoggingFilter(), new ResponseLoggingFilter());
     }
-
 
     @Test
     void testCreateUser() {
@@ -40,13 +39,11 @@ public class CreateUserTest {
                 .body(user)
                 .post("/user")
                 .then()
+                .assertThat()
                 .statusCode(HttpStatus.SC_OK)
                 .contentType(ContentType.JSON)
                 .extract()
                 .as(UserResponse.class);
-
-        UserResponse userResponse = response.as(UserResponse.class);
-        Assertions.assertEquals(200, userResponse.getCode());
     }
 
     @Test
