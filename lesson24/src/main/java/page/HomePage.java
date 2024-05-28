@@ -1,6 +1,8 @@
+package page;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.WebDriverRunner;
 import component.Header;
+import component.Navigation;
 
 public class HomePage {
 
@@ -10,7 +12,11 @@ public class HomePage {
         return this;
     }
 
-    public Header getHeder() {
+    public Header getHeader() {
         return Selenide.page(Header.class);
+    }
+
+    public Navigation getNavigation() {
+        return Selenide.page(Navigation.class);
     }
 }
