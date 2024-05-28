@@ -44,6 +44,7 @@ public class CreateUserTest {
                 .contentType(ContentType.JSON)
                 .extract()
                 .as(UserResponse.class);
+        Assertions.assertEquals(200, response.getCode());
     }
 
     @Test
@@ -54,7 +55,6 @@ public class CreateUserTest {
         Assertions.assertEquals(HttpStatus.SC_NOT_FOUND, response.getStatusCode());
         Assertions.assertEquals("application/json; charset=utf-8", response.getContentType());
     }
-
 
     public static Stream<Arguments> registerTest() {
         return Stream.of(
