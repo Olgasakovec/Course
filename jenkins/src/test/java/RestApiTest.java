@@ -21,7 +21,7 @@ public class RestApiTest {
         given()
                 .accept(ContentType.JSON)
                 .when()
-                .get("https://petstore.swagger.io/v2/pet/9223372036854337000")
+                .get("https://petstore.swagger.io/v2/pet/788582")
                 .then()
                 .statusCode(HttpStatus.SC_OK)
                 .contentType(ContentType.JSON)
