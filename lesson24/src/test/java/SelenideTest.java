@@ -1,18 +1,42 @@
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+import com.codeborne.selenide.WebDriverRunner;
+import io.github.bonigarcia.wdm.WebDriverManager;
+import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.parallel.Execution;
 import org.junit.jupiter.api.parallel.ExecutionMode;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import page.HomePage;
 import java.util.stream.Stream;
+
+import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static com.codeborne.selenide.WebDriverRunner.url;
 
 @Execution(ExecutionMode.CONCURRENT)
 public class SelenideTest {
+
+    static ChromeOptions options;
+    @BeforeAll
+    static void driverDown(){
+        WebDriverManager.chromedriver().clearDriverCache().setup();
+        options = new ChromeOptions();
+        options.addArguments("--remote-allow-origins=*");
+    }
+
+    @BeforeEach
+    void setUpDriver() {
+        WebDriverRunner.setWebDriver(new ChromeDriver(options));
+    }
+
+    @AfterEach
+    void closeBrowser(){
+        getWebDriver().close();
+    }
 
     public static final String ticketProURL = "https://www.ticketpro.by/";
 
@@ -34,8 +58,7 @@ public class SelenideTest {
                 .clickIntertament(intertament)
                 .getTitle();
 
-        title.shouldHave(Condition.visible);
-        Assertions.assertTrue(title.getText().equals(expectedTitle));
+        title.shouldBe(Condition.visible).shouldHave(Condition.text(expectedTitle));
     }
 
     @Test
