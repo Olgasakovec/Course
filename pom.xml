@@ -33,16 +33,14 @@
         <module>lesson18</module>
         <module>selenida</module>
         <module>lesson19.2</module>
-<<<<<<< HEAD
         <module>jenkins</module>
-=======
         <module>lesson23</module>
         <module>lesson20</module>
         <module>lesson21</module>
         <module>lesson22</module>
         <module>lesson24</module>
->>>>>>> main
     </modules>
+
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
@@ -80,16 +78,6 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.0.0-M4</version>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-report-plugin</artifactId>
-                <version>3.0.0-M4</version>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-site-plugin</artifactId>
-                <version>3.7.1</version>
             </plugin>
         </plugins>
     </build>
