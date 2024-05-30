@@ -16,7 +16,6 @@ public class RestApiTest {
         RestAssured.baseURI = "https://petstore.swagger.io/v2/";
     }
 
-
     @Test
     void getStatus() {
         given()
