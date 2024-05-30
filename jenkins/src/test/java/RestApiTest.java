@@ -13,15 +13,17 @@ public class RestApiTest {
     @BeforeAll
     static void prepareLogger() {
         RestAssured.filters(new RequestLoggingFilter(), new ResponseLoggingFilter());
+        RestAssured.baseURI = "https://petstore.swagger.io/v2/";
     }
 
 
     @Test
-    void getExample() {
+    void getStatus() {
         given()
                 .accept(ContentType.JSON)
+                .queryParam("status", "pending")
                 .when()
-                .get("https://petstore.swagger.io/v2/pet/788582")
+                .get("pet/findByStatus")
                 .then()
                 .statusCode(HttpStatus.SC_OK)
                 .contentType(ContentType.JSON)
