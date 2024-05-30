@@ -31,10 +31,17 @@
         <module>lesson17</module>
         <module>lesson16</module>
         <module>lesson18</module>
-        <module>lesson20</module>
         <module>selenida</module>
         <module>lesson19.2</module>
+<<<<<<< HEAD
         <module>jenkins</module>
+=======
+        <module>lesson23</module>
+        <module>lesson20</module>
+        <module>lesson21</module>
+        <module>lesson22</module>
+        <module>lesson24</module>
+>>>>>>> main
     </modules>
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
